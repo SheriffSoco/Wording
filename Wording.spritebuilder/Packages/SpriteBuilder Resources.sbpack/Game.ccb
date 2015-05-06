@@ -555,7 +555,7 @@
 				<key>displayName</key>
 				<string>whiteZeroButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>whiteZeroButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -658,7 +658,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>0</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -670,7 +670,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/White_0_Large.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -681,7 +681,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/White_0_Large.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -881,7 +881,7 @@
 				<key>displayName</key>
 				<string>whiteOneButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>whiteOneButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -984,7 +984,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>1</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -996,7 +996,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/White_1_Large.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1007,7 +1007,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/White_1_Large.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1207,7 +1207,7 @@
 				<key>displayName</key>
 				<string>blueZeroButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>blueZeroButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -1310,7 +1310,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>0</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -1322,7 +1322,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/Blue_0.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1333,7 +1333,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/Blue_0.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1533,7 +1533,7 @@
 				<key>displayName</key>
 				<string>blueOneButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>blueOneButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -1636,7 +1636,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>1</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -1648,7 +1648,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/Blue_1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1659,7 +1659,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/Blue_1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1859,7 +1859,7 @@
 				<key>displayName</key>
 				<string>redZeroButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>redZeroButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -1962,7 +1962,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>0</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -1974,7 +1974,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/Red_0.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1985,7 +1985,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/Red_0.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2185,7 +2185,7 @@
 				<key>displayName</key>
 				<string>redOneButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>redOneButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -2288,7 +2288,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>1</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -2300,7 +2300,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/Red_1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2311,7 +2311,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/Red_1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2511,7 +2511,7 @@
 				<key>displayName</key>
 				<string>greenZeroButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>greenZeroButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -2614,7 +2614,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>0</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -2626,7 +2626,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/Green_0.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2637,7 +2637,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/Green_0.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2837,7 +2837,7 @@
 				<key>displayName</key>
 				<string>greenOneButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>greenOneButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -2940,7 +2940,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>1</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -2952,7 +2952,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/Green_1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2963,7 +2963,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/Green_1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3163,7 +3163,7 @@
 				<key>displayName</key>
 				<string>orangeZeroButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>orangeZeroButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -3232,8 +3232,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>122.5</real>
-							<real>112.5</real>
+							<real>128</real>
+							<real>128</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -3245,8 +3245,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>122.5</real>
+							<real>112.5</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -3266,7 +3266,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>0</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -3278,7 +3278,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/Orange_0.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3289,7 +3289,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/Orange_0.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3489,7 +3489,7 @@
 				<key>displayName</key>
 				<string>orangeOneButton</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>orangeOneButton</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -3558,8 +3558,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>122.5</real>
-							<real>112.5</real>
+							<real>128</real>
+							<real>128</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -3571,8 +3571,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>122.5</real>
+							<real>112.5</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -3592,7 +3592,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>1</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -3604,7 +3604,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Buttons/Orange_1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3615,7 +3615,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>Buttons/Orange_1.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3943,7 +3943,7 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>0.11563205718994141</real>
 			<key>position</key>
 			<real>0.0</real>
 			<key>resolution</key>
