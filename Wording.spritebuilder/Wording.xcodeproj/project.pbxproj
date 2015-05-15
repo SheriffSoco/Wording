@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		160C73751AF3F76F00106636 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C73741AF3F76F00106636 /* Game.swift */; };
+		16509F3B1B065F6B001D6D3B /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16509F3A1B065F6B001D6D3B /* Letter.swift */; };
+		16509F3C1B065F6B001D6D3B /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16509F3A1B065F6B001D6D3B /* Letter.swift */; };
 		5B121030197484FA004C1E1D /* WordingActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* WordingActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A046D7519E84C36004C4763 /* MainScene.swift */; };
@@ -143,6 +145,8 @@
 
 /* Begin PBXFileReference section */
 		160C73741AF3F76F00106636 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		16509F3A1B065F6B001D6D3B /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		16D20F0D1AFD359900E9C0A1 /* scratchpad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratchpad.playground; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -431,6 +435,8 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				160C73741AF3F76F00106636 /* Game.swift */,
+				16509F3A1B065F6B001D6D3B /* Letter.swift */,
+				16D20F0D1AFD359900E9C0A1 /* scratchpad.playground */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -785,6 +791,7 @@
 				7A10CE5619F32FB0001673C3 /* MainScene.swift in Sources */,
 				7A40360419DDEE84007B6E8F /* main.m in Sources */,
 				7A59498E19E3941300F65F90 /* AppDelegate.m in Sources */,
+				16509F3C1B065F6B001D6D3B /* Letter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +809,7 @@
 			files = (
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
+				16509F3B1B065F6B001D6D3B /* Letter.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				160C73751AF3F76F00106636 /* Game.swift in Sources */,
 			);
