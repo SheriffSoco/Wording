@@ -90,12 +90,22 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>Buttons/Blue_1_updated.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>Buttons/Green_0.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>Buttons/Green_1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Buttons/Green_1_updated.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
@@ -110,12 +120,27 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>Buttons/Orange_1_updated.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>Buttons/Red_0.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
 		<key>Buttons/Red_1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Buttons/Red_1_upadated.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Buttons/TimerBar.psd</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>

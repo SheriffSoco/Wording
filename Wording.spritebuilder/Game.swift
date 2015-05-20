@@ -25,10 +25,12 @@ class Game: CCScene {
     var greenOneButton : CCButton!
     var orangeZeroButton : CCButton!
     var orangeOneButton : CCButton!
-    var letterOne : Letter!
-    var letterTwo : Letter!
-    var letterThree : Letter!
-    var letterFour : Letter!
+    var letterOne : CCLabelTTF!
+    var letterTwo : CCLabelTTF!
+    var letterThree : CCLabelTTF!
+    var letterFour : CCLabelTTF!
+    var score : CCLabelTTF!
+    var scoreBar : CCSprite!
     var zeroColors : [Int] = [0, 1] //The colors of the visible buttons
     var oneColors : [Int] = [4, 5]
     let zeroArray : [Int] = [1,2,3,4] //color used in words
@@ -36,6 +38,8 @@ class Game: CCScene {
     var wordList = Array(count:6, repeatedValue:Array(count:4, repeatedValue:String()))
     var buttonCharacters : [Int] = []
     var checkingCharacter : Int = 0
+    var levelCounter : Int = 0
+    var scoreCounter : CGFloat = 0
     
     func didLoadFromCCB() {
         //words
@@ -91,13 +95,14 @@ class Game: CCScene {
         nodeArray.append(greenNode)
         nodeArray.append(blueNode)
         nodeArray.append(orangeNode)
+        score.string = "0"
         loadNewButtons()
         loadNewWord()
         self.userInteractionEnabled = true
     }
     
     override func update(delta: CCTime) {
-        
+        scoreBar.position = ccp(scoreBar.position.x-2,scoreBar.position.y)
     }
     
     func loadNewButtons () {
@@ -175,6 +180,7 @@ class Game: CCScene {
                 }
             }
         }
+        scoreBar.position = ccp(0,438)
     }
     
     func checkLetter (colorNumber: Int) {
@@ -182,8 +188,20 @@ class Game: CCScene {
             buttonCharacters.removeAtIndex(0)
         }
         if buttonCharacters.count == 0 {
+            levelCounter++
+            getScore()
+            if levelCounter%15 == 0 {
+                loadNewButtons()
+            }
             loadNewWord()
         }
+    }
+    
+    func getScore () {
+        var levelScore : CGFloat
+        levelScore = ((320+scoreBar.position.x)/320)*100.0
+        scoreCounter = scoreCounter + levelScore
+        score.string = "\(Int(scoreCounter))"
     }
     
     func getColor (number: Int) -> CCColor {
