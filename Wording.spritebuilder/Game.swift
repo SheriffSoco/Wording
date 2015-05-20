@@ -25,21 +25,25 @@ class Game: CCScene {
     var greenOneButton : CCButton!
     var orangeZeroButton : CCButton!
     var orangeOneButton : CCButton!
+    var buttonArray : [CCButton] = []
     var letterOne : CCLabelTTF!
     var letterTwo : CCLabelTTF!
     var letterThree : CCLabelTTF!
     var letterFour : CCLabelTTF!
     var score : CCLabelTTF!
     var scoreBar : CCSprite!
-    var zeroColors : [Int] = [0, 1] //The colors of the visible buttons
-    var oneColors : [Int] = [4, 5]
+    var zeroColors : [Int] = [] //The colors of the visible buttons
+    var oneColors : [Int] = []
     let zeroArray : [Int] = [1,2,3,4] //color used in words
     let oneArray : [Int] = [6,7,8,9]
-    var wordList = Array(count:6, repeatedValue:Array(count:4, repeatedValue:String()))
+    var wordList = Array(count:23, repeatedValue:Array(count:4, repeatedValue:String()))
     var buttonCharacters : [Int] = []
     var checkingCharacter : Int = 0
-    var levelCounter : Int = 0
+    var levelCounter : CGFloat = 0
     var scoreCounter : CGFloat = 0
+    var timer : CGFloat = 0
+    var newButtonCounter : Int = 15
+    var buttonPatternCounter : Int = 0
     
     func didLoadFromCCB() {
         //words
@@ -73,28 +77,123 @@ class Game: CCScene {
         wordList[5][1] = "R"
         wordList[5][2] = "O"
         wordList[5][3] = "P"
-        /*wordList[0][0] = "FIRE"
-        wordList[0][0] = "LINE"
-        wordList[0][0] = "LORD"
-        wordList[0][0] = "MINE"
-        wordList[0][0] = "NOON"
-        wordList[0][0] = "MOON"
-        wordList[0][0] = "LOON"
-        wordList[0][0] = "BOOM"
-        wordList[0][0] = "FOOL"
-        wordList[0][0] = "BOOL"
-        wordList[0][0] = "COIN"
-        wordList[0][0] = "INFO"
-        wordList[0][0] = "JOIN"
-        wordList[0][0] = "TOIL"
-        wordList[0][0] = "LOGO"
-        wordList[0][0] = "LOOP"
-        wordList[0][0] = "MONO"*/
-        
+        //FIRE
+        wordList[6][0] = "F"
+        wordList[6][1] = "I"
+        wordList[6][2] = "R"
+        wordList[6][3] = "E"
+        //LINE
+        wordList[7][0] = "L"
+        wordList[7][1] = "I"
+        wordList[7][2] = "N"
+        wordList[7][3] = "E"
+        //LORD
+        wordList[8][0] = "L"
+        wordList[8][1] = "O"
+        wordList[8][2] = "R"
+        wordList[8][3] = "D"
+        //MINE
+        wordList[9][0] = "M"
+        wordList[9][1] = "I"
+        wordList[9][2] = "N"
+        wordList[9][3] = "E"
+        //NOON
+        wordList[10][0] = "N"
+        wordList[10][1] = "O"
+        wordList[10][2] = "O"
+        wordList[10][3] = "N"
+        //MOON
+        wordList[11][0] = "M"
+        wordList[11][1] = "O"
+        wordList[11][2] = "O"
+        wordList[11][3] = "N"
+        //LOON
+        wordList[12][0] = "L"
+        wordList[12][1] = "O"
+        wordList[12][2] = "O"
+        wordList[12][3] = "N"
+        //BOOM
+        wordList[13][0] = "B"
+        wordList[13][1] = "O"
+        wordList[13][2] = "O"
+        wordList[13][3] = "M"
+        //FOOL
+        wordList[14][0] = "F"
+        wordList[14][1] = "O"
+        wordList[14][2] = "O"
+        wordList[14][3] = "L"
+        //BOOL
+        wordList[15][0] = "B"
+        wordList[15][1] = "O"
+        wordList[15][2] = "O"
+        wordList[15][3] = "L"
+        //COIN
+        wordList[16][0] = "C"
+        wordList[16][1] = "O"
+        wordList[16][2] = "I"
+        wordList[16][3] = "N"
+        //INFO
+        wordList[17][0] = "I"
+        wordList[17][1] = "N"
+        wordList[17][2] = "F"
+        wordList[17][3] = "O"
+        //JOIN
+        wordList[18][0] = "J"
+        wordList[18][1] = "O"
+        wordList[18][2] = "I"
+        wordList[18][3] = "N"
+        //TOIL
+        wordList[19][0] = "T"
+        wordList[19][1] = "O"
+        wordList[19][2] = "I"
+        wordList[19][3] = "L"
+        //LOGO
+        wordList[20][0] = "L"
+        wordList[20][1] = "O"
+        wordList[20][2] = "G"
+        wordList[20][3] = "O"
+        //LOOP
+        wordList[21][0] = "L"
+        wordList[21][1] = "O"
+        wordList[21][2] = "O"
+        wordList[21][3] = "P"
+        //MONO
+        wordList[22][0] = "M"
+        wordList[22][1] = "O"
+        wordList[22][2] = "N"
+        wordList[22][3] = "O"
+        //ZERO
+        wordList[22][0] = "Z"
+        wordList[22][1] = "E"
+        wordList[22][2] = "R"
+        wordList[22][3] = "O"
+        //INTO
+        wordList[22][0] = "I"
+        wordList[22][1] = "N"
+        wordList[22][2] = "T"
+        wordList[22][3] = "O"
+        //FROM
+        wordList[22][0] = "F"
+        wordList[22][1] = "R"
+        wordList[22][2] = "O"
+        wordList[22][3] = "M"
+        //MINI
+        wordList[22][0] = "M"
+        wordList[22][1] = "I"
+        wordList[22][2] = "N"
+        wordList[22][3] = "I"
         nodeArray.append(redNode)
         nodeArray.append(greenNode)
         nodeArray.append(blueNode)
         nodeArray.append(orangeNode)
+        buttonArray.append(redZeroButton)
+        buttonArray.append(redOneButton)
+        buttonArray.append(greenZeroButton)
+        buttonArray.append(greenOneButton)
+        buttonArray.append(blueZeroButton)
+        buttonArray.append(blueOneButton)
+        buttonArray.append(orangeZeroButton)
+        buttonArray.append(orangeOneButton)
         score.string = "0"
         loadNewButtons()
         loadNewWord()
@@ -102,31 +201,45 @@ class Game: CCScene {
     }
     
     override func update(delta: CCTime) {
-        scoreBar.position = ccp(scoreBar.position.x-2,scoreBar.position.y)
+        timer = 2+(0.1*levelCounter)
+        scoreBar.position = ccp(scoreBar.position.x-timer,scoreBar.position.y)
     }
     
     func loadNewButtons () {
+        zeroColors.removeAll()
+        oneColors.removeAll()
         whiteNode.position = ccp(-406.9,260.5)
         redNode.position = ccp(-406.9,260.5)
         greenNode.position = ccp(-406.9,260.5)
         blueNode.position = ccp(-406.9,260.5)
         orangeNode.position = ccp(-406.9,260.5)
-        var firstNode : UInt32 = arc4random_uniform(4) //Take new colors
-        var secondNode : UInt32 = arc4random_uniform(4)
-        while secondNode == firstNode {
-            secondNode = arc4random_uniform(4)
+        redZeroButton.position = ccp(0,0)
+        redOneButton.position = ccp(147.5,0)
+        blueZeroButton.position = ccp(0,0)
+        blueOneButton.position = ccp(147.5,0)
+        greenZeroButton.position = ccp(0,0)
+        greenOneButton.position = ccp(147.5,0)
+        orangeZeroButton.position = ccp(0,0)
+        orangeOneButton.position = ccp(147.5,0)
+        if buttonPatternCounter <= 2 {
+            var firstNode : UInt32 = arc4random_uniform(4) //Take new colors
+            var secondNode : UInt32 = arc4random_uniform(4)
+            while secondNode == firstNode {
+                secondNode = arc4random_uniform(4)
+            }
+            nodeArray[Int(firstNode)].position = ccp(25,373) //Position Buttons
+            nodeArray[Int(secondNode)].position = ccp(25, 235.5)
+            zeroColors.append(zeroArray[Int(firstNode)]) //Edit array so correct colors are being used below
+            zeroColors.append(zeroArray[Int(secondNode)])
+            oneColors.append(oneArray[Int(firstNode)])
+            oneColors.append(oneArray[Int(secondNode)])
         }
-        nodeArray[Int(firstNode)].position = ccp(25,373) //Position Buttons
-        nodeArray[Int(secondNode)].position = ccp(25, 235.5)
-        zeroColors[0] = zeroArray[Int(firstNode)] //Edit array so correct colors are being used below
-        zeroColors[1] = zeroArray[Int(secondNode)]
-        oneColors[0] = oneArray[Int(firstNode)]
-        oneColors[1] = oneArray[Int(secondNode)]
+        buttonPatternCounter++
     }
     func loadNewWord () {
         var randomValue : UInt32 = arc4random_uniform(UInt32(wordList.count))
-        var randomOneValue : UInt32 = arc4random_uniform(2)
-        var randomZeroValue : UInt32 = arc4random_uniform(2)
+        var randomOneValue : UInt32 = arc4random_uniform(UInt32(oneColors.count))
+        var randomZeroValue : UInt32 = arc4random_uniform(UInt32(zeroColors.count))
         var newCharacter : String = ""
         var colorInt : Int = 0
         for ii in 0...3 {
@@ -190,7 +303,7 @@ class Game: CCScene {
         if buttonCharacters.count == 0 {
             levelCounter++
             getScore()
-            if levelCounter%15 == 0 {
+            if Int(levelCounter)%Int(newButtonCounter) == 0 {
                 loadNewButtons()
             }
             loadNewWord()
