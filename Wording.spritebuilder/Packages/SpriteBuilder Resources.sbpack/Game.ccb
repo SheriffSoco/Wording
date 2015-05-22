@@ -137,8 +137,6 @@
 						<real>1</real>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -274,7 +272,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/White_1_Large.png</string>
+									<string>GameButtons/White_1_Large.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -285,7 +283,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/White_1_Large.png</string>
+									<string>GameButtons/White_1_Large.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -600,7 +598,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/White_0_Large.png</string>
+									<string>GameButtons/White_0_Large.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -611,7 +609,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/White_0_Large.png</string>
+									<string>GameButtons/White_0_Large.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -825,8 +823,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-406.92803955078125</real>
-							<real>260.5</real>
+							<real>25</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1005,7 +1003,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Blue_1_updated.png</string>
+									<string>GameButtons/Blue_1_updated.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1016,7 +1014,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Blue_1_updated.png</string>
+									<string>GameButtons/Blue_1_updated.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1331,7 +1329,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Blue_0.png</string>
+									<string>GameButtons/Blue_0.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1342,7 +1340,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Blue_0.png</string>
+									<string>GameButtons/Blue_0.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1556,8 +1554,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-406.92803955078125</real>
-							<real>260.5</real>
+							<real>25</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1736,7 +1734,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Red_1_upadated.png</string>
+									<string>GameButtons/Red_1_upadated.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1747,7 +1745,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Red_1_upadated.png</string>
+									<string>GameButtons/Red_1_upadated.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -2062,7 +2060,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Red_0.png</string>
+									<string>GameButtons/Red_0.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -2073,7 +2071,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Red_0.png</string>
+									<string>GameButtons/Red_0.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -2287,8 +2285,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-406.92803955078125</real>
-							<real>260.5</real>
+							<real>25</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2467,7 +2465,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Green_1_updated.png</string>
+									<string>GameButtons/Green_1_updated.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -2478,7 +2476,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Green_1_updated.png</string>
+									<string>GameButtons/Green_1_updated.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -2793,7 +2791,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Green_0.png</string>
+									<string>GameButtons/Green_0.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -2804,7 +2802,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Green_0.png</string>
+									<string>GameButtons/Green_0.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -3018,8 +3016,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-406.92803955078125</real>
-							<real>260.5</real>
+							<real>25</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -3198,7 +3196,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Orange_1_updated.png</string>
+									<string>GameButtons/Orange_1_updated.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -3209,7 +3207,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Orange_1_updated.png</string>
+									<string>GameButtons/Orange_1_updated.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -3524,7 +3522,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Orange_0.png</string>
+									<string>GameButtons/Orange_0.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -3535,7 +3533,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Buttons/Orange_0.png</string>
+									<string>GameButtons/Orange_0.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -3749,8 +3747,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-406.92803955078125</real>
-							<real>260.5</real>
+							<real>25</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -4793,7 +4791,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Buttons/TimerBar.psd</string>
+							<string>GameButtons/TimerBar.psd</string>
 						</array>
 					</dict>
 					<dict>
@@ -4829,6 +4827,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -5396,7 +5396,7 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>0.031251907348632812</real>
 			<key>position</key>
 			<real>0.0</real>
 			<key>resolution</key>
