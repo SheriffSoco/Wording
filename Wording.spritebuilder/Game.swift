@@ -41,7 +41,7 @@ class Game: CCScene {
     var levelCounter : CGFloat = 0
     var scoreCounter : CGFloat = 0
     var timer : CGFloat = 0
-    var newButtonCounter : Int = 15
+    var newButtonCounter : Int = 10
     var buttonPatternCounter : Int = 0
     var allZeros : Bool = false
     var allOnes : Bool = false
@@ -232,7 +232,7 @@ class Game: CCScene {
         greenOneButton.position = ccp(147.5,0)
         orangeZeroButton.position = ccp(0,0)
         orangeOneButton.position = ccp(147.5,0)
-        if buttonPatternCounter <= 0 {
+        if buttonPatternCounter <= 2 {
             var firstNode : UInt32 = arc4random_uniform(4) //Take new colors
             var secondNode : UInt32 = arc4random_uniform(4)
             while secondNode == firstNode {
@@ -380,6 +380,9 @@ class Game: CCScene {
             getScore()
             if Int(levelCounter)%Int(newButtonCounter) == 0 {
                 loadNewButtons()
+                if newButtonCounter < 1 {
+                    newButtonCounter--
+                }
             }
             loadNewWord()
         }

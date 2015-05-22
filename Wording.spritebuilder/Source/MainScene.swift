@@ -1,17 +1,16 @@
 import Foundation
 
 class MainScene: CCNode {
-    var nextScene: NSString = "Game"
+    var nextScene: NSString = "Menu"
     
     func didLoadFromCCB() {
         self.userInteractionEnabled = true
     }
     
     override func update(delta: CCTime) {
-        if nextScene == "Game" {
-            let mainScene: CCScene = CCBReader.loadAsScene(nextScene)
-            CCDirector.sharedDirector().replaceScene(mainScene);
-            nextScene == "Done"
-        }
+    }
+    func play() {
+        let mainScene: CCScene = CCBReader.loadAsScene("Game")
+        CCDirector.sharedDirector().replaceScene(mainScene);
     }
 }
