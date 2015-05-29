@@ -25,12 +25,16 @@ class Game: CCScene {
     var greenOneButton : CCButton!
     var orangeZeroButton : CCButton!
     var orangeOneButton : CCButton!
+    var retryButton : CCButton!
+    var trophyButton : CCButton!
+    var menuButton : CCButton!
     var buttonArray : [CCButton] = []
     var letterOne : CCLabelTTF!
     var letterTwo : CCLabelTTF!
     var letterThree : CCLabelTTF!
     var letterFour : CCLabelTTF!
     var score : CCLabelTTF!
+    var gameOverText : CCLabelTTF!
     var scoreBar : CCSprite!
     var zeroColors : [Int] = [] //The colors of the visible buttons
     var oneColors : [Int] = []
@@ -397,6 +401,23 @@ class Game: CCScene {
     
     func gameOver() {
         isGameOver = true
+        whiteNode.position = ccp(25,0)
+        redNode.position = ccp(25,0)
+        greenNode.position = ccp(25,0)
+        blueNode.position = ccp(25,0)
+        orangeNode.position = ccp(25,0)
+        redZeroButton.position = ccp(0,0)
+        redOneButton.position = ccp(147.5,0)
+        blueZeroButton.position = ccp(0,0)
+        blueOneButton.position = ccp(147.5,0)
+        greenZeroButton.position = ccp(0,0)
+        greenOneButton.position = ccp(147.5,0)
+        orangeZeroButton.position = ccp(0,0)
+        orangeOneButton.position = ccp(147.5,0)
+        gameOverText.visible = true
+        retryButton.position = ccp(20,110)
+        trophyButton.position = ccp(120,110)
+        menuButton.position = ccp(220,110)
     }
     
     func getColor (number: Int) -> CCColor {
@@ -483,4 +504,17 @@ class Game: CCScene {
         checkLetter(checkingCharacter)
     }
     
+    func retry() {
+        let mainScene: CCScene = CCBReader.loadAsScene("Game")
+        CCDirector.sharedDirector().replaceScene(mainScene);
+    }
+    
+    func trophy() {
+        
+    }
+    
+    func menu() {
+        let mainScene: CCScene = CCBReader.loadAsScene("MainScene")
+        CCDirector.sharedDirector().replaceScene(mainScene);
+    }
 }

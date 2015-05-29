@@ -265,6 +265,16 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>MenuButtons/Retry.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>MenuButtons/Trophy.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>Sprites</key>
 		<dict/>
 		<key>ccbResources</key>
