@@ -2,3 +2,4 @@
 
 import UIKit
 
+let four : Int = 2
