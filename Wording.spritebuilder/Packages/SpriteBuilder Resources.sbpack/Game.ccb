@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>59</integer>
+	<integer>61</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -122,9 +122,9 @@
 						<string>Color3</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.54941976070404053</real>
-							<real>0.50006985664367676</real>
+							<real>0.0039215688593685627</real>
+							<real>0.54901963472366333</real>
+							<real>0.50196081399917603</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -3878,7 +3878,7 @@
 						<array>
 							<real>0.0</real>
 							<real>0.73725491762161255</real>
-							<real>0.67058825492858887</real>
+							<real>0.67450982332229614</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -3891,6 +3891,8 @@
 						<real>1</real>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -5543,8 +5545,8 @@ Over</string>
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>1.25</real>
+							<real>1.25</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -5567,8 +5569,8 @@ Over</string>
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>80</real>
-							<real>80</real>
+							<real>64</real>
+							<real>64</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -5613,7 +5615,7 @@ Over</string>
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>MenuButtons/Exit.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -5624,7 +5626,7 @@ Over</string>
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>MenuButtons/Exit.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -6459,6 +6461,84 @@ Over</string>
 							<real>-2</real>
 							<integer>0</integer>
 							<integer>0</integer>
+							<integer>0</integer>
+						</array>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>UUID</key>
+				<integer>60</integer>
+				<key>baseClass</key>
+				<string>CCNode</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>particleNode</string>
+				<key>memberVarAssignmentName</key>
+				<string>particleNode</string>
+				<key>memberVarAssignmentType</key>
+				<integer>1</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>name</string>
+						<key>type</key>
+						<string>StringSimple</string>
+						<key>value</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>160</real>
+							<real>235</real>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>contentSize</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+							<integer>0</integer>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
 							<integer>0</integer>
 						</array>
 					</dict>

@@ -255,6 +255,11 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>MenuButtons/Exit.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>MenuButtons/HelpButton.png</key>
 		<dict>
 			<key>scaleFrom</key>
