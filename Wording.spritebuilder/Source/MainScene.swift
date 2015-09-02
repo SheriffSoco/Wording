@@ -42,6 +42,10 @@ class MainScene: CCNode {
         caseVariable = 1
     }
     
+    func info() {
+        
+    }
+    
     func initialNodeMove(time: Int, choice: Int) {
         let pi : CGFloat = 3.14159265359
         var xposition : CGFloat

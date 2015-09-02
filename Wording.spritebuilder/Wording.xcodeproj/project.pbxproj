@@ -13,6 +13,13 @@
 		16509F3B1B065F6B001D6D3B /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16509F3A1B065F6B001D6D3B /* Letter.swift */; };
 		16509F3C1B065F6B001D6D3B /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16509F3A1B065F6B001D6D3B /* Letter.swift */; };
 		165A8CF31B190C170050388E /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A8CF21B190C170050388E /* MenuButton.swift */; };
+		1661CF011B7AF7CC000F4B89 /* WordGrabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1661CF001B7AF7CC000F4B89 /* WordGrabber.swift */; };
+		1661CF061B7AFDCA000F4B89 /* iwords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1661CF031B7AFDCA000F4B89 /* iwords.txt */; };
+		1661CF071B7AFDCA000F4B89 /* mixedwords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1661CF041B7AFDCA000F4B89 /* mixedwords.txt */; };
+		1661CF081B7AFDCA000F4B89 /* owords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1661CF051B7AFDCA000F4B89 /* owords.txt */; };
+		16B242C11B62005D0008D062 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16B242BE1B62005D0008D062 /* Correct.wav */; };
+		16B242C21B62005D0008D062 /* Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16B242BF1B62005D0008D062 /* Fail.wav */; };
+		16B242C31B62005D0008D062 /* LevelUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16B242C01B62005D0008D062 /* LevelUp.wav */; };
 		5B121030197484FA004C1E1D /* WordingActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* WordingActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A046D7519E84C36004C4763 /* MainScene.swift */; };
@@ -151,6 +158,13 @@
 		163309D21B39179400A485ED /* NewButtonParticles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewButtonParticles.swift; sourceTree = "<group>"; };
 		16509F3A1B065F6B001D6D3B /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		165A8CF21B190C170050388E /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		1661CF001B7AF7CC000F4B89 /* WordGrabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordGrabber.swift; sourceTree = "<group>"; };
+		1661CF031B7AFDCA000F4B89 /* iwords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = iwords.txt; path = ../iwords.txt; sourceTree = "<group>"; };
+		1661CF041B7AFDCA000F4B89 /* mixedwords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mixedwords.txt; path = ../mixedwords.txt; sourceTree = "<group>"; };
+		1661CF051B7AFDCA000F4B89 /* owords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = owords.txt; path = ../owords.txt; sourceTree = "<group>"; };
+		16B242BE1B62005D0008D062 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Correct.wav; path = ../Sounds/Correct.wav; sourceTree = "<group>"; };
+		16B242BF1B62005D0008D062 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Fail.wav; path = ../Sounds/Fail.wav; sourceTree = "<group>"; };
+		16B242C01B62005D0008D062 /* LevelUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = LevelUp.wav; path = ../Sounds/LevelUp.wav; sourceTree = "<group>"; };
 		16D20F0D1AFD359900E9C0A1 /* scratchpad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratchpad.playground; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -438,6 +452,13 @@
 			isa = PBXGroup;
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
+				1661CF041B7AFDCA000F4B89 /* mixedwords.txt */,
+				1661CF051B7AFDCA000F4B89 /* owords.txt */,
+				1661CF031B7AFDCA000F4B89 /* iwords.txt */,
+				1661CF001B7AF7CC000F4B89 /* WordGrabber.swift */,
+				16B242BE1B62005D0008D062 /* Correct.wav */,
+				16B242BF1B62005D0008D062 /* Fail.wav */,
+				16B242C01B62005D0008D062 /* LevelUp.wav */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				163309D21B39179400A485ED /* NewButtonParticles.swift */,
 				160C73741AF3F76F00106636 /* Game.swift */,
@@ -725,20 +746,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B242C31B62005D0008D062 /* LevelUp.wav in Resources */,
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
+				1661CF061B7AFDCA000F4B89 /* iwords.txt in Resources */,
+				1661CF081B7AFDCA000F4B89 /* owords.txt in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
+				16B242C11B62005D0008D062 /* Correct.wav in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
+				16B242C21B62005D0008D062 /* Fail.wav in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
+				1661CF071B7AFDCA000F4B89 /* mixedwords.txt in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,6 +847,7 @@
 				165A8CF31B190C170050388E /* MenuButton.swift in Sources */,
 				163309D31B39179400A485ED /* NewButtonParticles.swift in Sources */,
 				16509F3B1B065F6B001D6D3B /* Letter.swift in Sources */,
+				1661CF011B7AF7CC000F4B89 /* WordGrabber.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				160C73751AF3F76F00106636 /* Game.swift in Sources */,
 			);

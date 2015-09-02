@@ -908,7 +908,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>147.5</real>
+									<real>140.5</real>
 									<real>0.0</real>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -3891,8 +3891,6 @@
 						<real>1</real>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -4722,6 +4720,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -5615,7 +5615,7 @@ Over</string>
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>MenuButtons/Exit.png</string>
+							<string>MenuButtons/Exit_New.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -5626,7 +5626,7 @@ Over</string>
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>MenuButtons/Exit.png</string>
+							<string>MenuButtons/Exit_New.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -5941,7 +5941,7 @@ Over</string>
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>MenuButtons/Trophy.png</string>
+							<string>MenuButtons/Trophy_New.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -5952,7 +5952,7 @@ Over</string>
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>MenuButtons/Trophy.png</string>
+							<string>MenuButtons/Trophy_New.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -6267,7 +6267,7 @@ Over</string>
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>MenuButtons/Retry.png</string>
+							<string>MenuButtons/Retry_New.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -6278,7 +6278,7 @@ Over</string>
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>MenuButtons/Retry.png</string>
+							<string>MenuButtons/Retry_New.png</string>
 						</array>
 					</dict>
 					<dict>

@@ -8,6 +8,21 @@
 
 import Foundation
 
+extension String
+{
+    subscript(integerIndex: Int) -> Character {
+        let index = advance(startIndex, integerIndex)
+        return self[index]
+    }
+    
+    subscript(integerRange: Range<Int>) -> String {
+        let start = advance(startIndex, integerRange.startIndex)
+        let end = advance(startIndex, integerRange.endIndex)
+        let range = start..<end
+        return self[range]
+    }
+}
+
 class Game: CCScene {
     var whiteNode : CCNode!
     var redNode : CCNode!
@@ -41,10 +56,12 @@ class Game: CCScene {
     var zeroColors : [Int] = [] //The colors of the visible buttons
     var oneColors : [Int] = []
     let numberArray : [Int] = [1,2,3,4,6,7,8,9]
-    var wordList = Array(count:27, repeatedValue:Array(count:4, repeatedValue:String()))
+    var location : String = ""
     var buttonCharacters : [Int] = []
+    var allCharacters : [Int] = []
     var checkingCharacter : Int = 0
     var levelCounter : CGFloat = 0
+    var speedCounter : CGFloat = 0
     var scoreCounter : CGFloat = 0
     var timer : CGFloat = 0
     var newButtonCounter : Int = 10
@@ -55,149 +72,12 @@ class Game: CCScene {
     var allZeros : Bool = false
     var allOnes : Bool = false
     var isGameOver = false
+    var newWord = WordGrabber()
     
     func didLoadFromCCB() {
-        //words
-        //0 - 14 : Only 0
-        //DOOM
-        wordList[0][0] = "D"
-        wordList[0][1] = "O"
-        wordList[0][2] = "O"
-        wordList[0][3] = "M"
-        //WORD
-        wordList[1][0] = "W"
-        wordList[1][1] = "O"
-        wordList[1][2] = "R"
-        wordList[1][3] = "D"
-        //PROP
-        wordList[2][0] = "P"
-        wordList[2][1] = "R"
-        wordList[2][2] = "O"
-        wordList[2][3] = "P"
-        //LORD
-        wordList[3][0] = "L"
-        wordList[3][1] = "O"
-        wordList[3][2] = "R"
-        wordList[3][3] = "D"
-        //NOON
-        wordList[4][0] = "N"
-        wordList[4][1] = "O"
-        wordList[4][2] = "O"
-        wordList[4][3] = "N"
-        //MOON
-        wordList[5][0] = "M"
-        wordList[5][1] = "O"
-        wordList[5][2] = "O"
-        wordList[5][3] = "N"
-        //LOON
-        wordList[6][0] = "L"
-        wordList[6][1] = "O"
-        wordList[6][2] = "O"
-        wordList[6][3] = "N"
-        //BOOM
-        wordList[7][0] = "B"
-        wordList[7][1] = "O"
-        wordList[7][2] = "O"
-        wordList[7][3] = "M"
-        //FOOL
-        wordList[8][0] = "F"
-        wordList[8][1] = "O"
-        wordList[8][2] = "O"
-        wordList[8][3] = "L"
-        //BOOL
-        wordList[9][0] = "B"
-        wordList[9][1] = "O"
-        wordList[9][2] = "O"
-        wordList[9][3] = "L"
-        //LOGO
-        wordList[10][0] = "L"
-        wordList[10][1] = "O"
-        wordList[10][2] = "G"
-        wordList[10][3] = "O"
-        //LOOP
-        wordList[11][0] = "L"
-        wordList[11][1] = "O"
-        wordList[11][2] = "O"
-        wordList[11][3] = "P"
-        //MONO
-        wordList[12][0] = "M"
-        wordList[12][1] = "O"
-        wordList[12][2] = "N"
-        wordList[12][3] = "O"
-        //ZERO
-        wordList[13][0] = "Z"
-        wordList[13][1] = "E"
-        wordList[13][2] = "R"
-        wordList[13][3] = "O"
-        //FROM
-        wordList[14][0] = "F"
-        wordList[14][1] = "R"
-        wordList[14][2] = "O"
-        wordList[14][3] = "M"
-        
-        //15 - 20 : Only 1
-        //BIND
-        wordList[15][0] = "B"
-        wordList[15][1] = "I"
-        wordList[15][2] = "N"
-        wordList[15][3] = "D"
-        //FIRE
-        wordList[16][0] = "F"
-        wordList[16][1] = "I"
-        wordList[16][2] = "R"
-        wordList[16][3] = "E"
-        //LINE
-        wordList[17][0] = "L"
-        wordList[17][1] = "I"
-        wordList[17][2] = "N"
-        wordList[17][3] = "E"
-        //GAIN
-        wordList[18][0] = "G"
-        wordList[18][1] = "A"
-        wordList[18][2] = "I"
-        wordList[18][3] = "N"
-        //MINE
-        wordList[19][0] = "M"
-        wordList[19][1] = "I"
-        wordList[19][2] = "N"
-        wordList[19][3] = "E"
-        //MINI
-        wordList[20][0] = "M"
-        wordList[20][1] = "I"
-        wordList[20][2] = "N"
-        wordList[20][3] = "I"
-        
-        //21 - 26 : Mixed
-        //LION
-        wordList[21][0] = "L"
-        wordList[21][1] = "I"
-        wordList[21][2] = "O"
-        wordList[21][3] = "N"
-        //COIN
-        wordList[22][0] = "C"
-        wordList[22][1] = "O"
-        wordList[22][2] = "I"
-        wordList[22][3] = "N"
-        //INFO
-        wordList[23][0] = "I"
-        wordList[23][1] = "N"
-        wordList[23][2] = "F"
-        wordList[23][3] = "O"
-        //JOIN
-        wordList[24][0] = "J"
-        wordList[24][1] = "O"
-        wordList[24][2] = "I"
-        wordList[24][3] = "N"
-        //TOIL
-        wordList[25][0] = "T"
-        wordList[25][1] = "O"
-        wordList[25][2] = "I"
-        wordList[25][3] = "L"
-        //INTO
-        wordList[26][0] = "I"
-        wordList[26][1] = "N"
-        wordList[26][2] = "T"
-        wordList[26][3] = "O"
+        OALSimpleAudio.sharedInstance().preloadEffect("Correct.wav")
+        OALSimpleAudio.sharedInstance().preloadEffect("Fail.wav")
+        OALSimpleAudio.sharedInstance().preloadEffect("LevelUp.wav")
         nodeArray.append(redNode)
         nodeArray.append(greenNode)
         nodeArray.append(blueNode)
@@ -221,14 +101,6 @@ class Game: CCScene {
     }
     
     override func update(delta: CCTime) {
-        if isGameOver == false {
-            timer = 2+(0.1*levelCounter)
-            scoreBar.position = ccp(scoreBar.position.x-timer,scoreBar.position.y)
-            if scoreBar.position.x <= -320 {
-                isGameOver = true
-                gameOver()
-            }
-        }
         if startCounter > 0 {
             redZeroButton.position = ccp(redZeroButton.position.x + 60.225,redZeroButton.position.y)
             greenZeroButton.position = ccp(greenZeroButton.position.x + 60.225,greenZeroButton.position.y)
@@ -243,6 +115,14 @@ class Game: CCScene {
                 startCounter = 0
                 loadNewButtons()
                 loadNewWord()
+            }
+        }
+        else if isGameOver != true {
+            timer = 2+(0.1*speedCounter)
+            scoreBar.position = ccp(scoreBar.position.x-timer,scoreBar.position.y)
+            if scoreBar.position.x <= -320 {
+                isGameOver = true
+                gameOver()
             }
         }
         if moveButtons == true {
@@ -348,38 +228,40 @@ class Game: CCScene {
         buttonPatternCounter++
     }
     func loadNewWord () {
-        var zeroRange : UInt32 = 15
-        var oneRange : UInt32 = 6
-        var fullRange : UInt32 = UInt32(wordList.count)
-        var randomValue : UInt32
         var randomOneValue : UInt32 = arc4random_uniform(UInt32(oneColors.count))
         var randomZeroValue : UInt32 = arc4random_uniform(UInt32(zeroColors.count))
         var newCharacter : String = ""
+        var wordString : String = ""
         var colorInt : Int = 0
         if allZeros == true {
-            randomValue = arc4random_uniform(zeroRange)
+            wordString = newWord.loadNewWord(1)
         }
         else if allOnes == true {
-            randomValue = arc4random_uniform(oneRange) + zeroRange
+            wordString = newWord.loadNewWord(2)
         }
         else {
-            randomValue = arc4random_uniform(fullRange)
+            wordString = newWord.loadNewWord(3)
         }
-        for ii in 0...3 {
-            newCharacter = wordList[Int(randomValue)][ii]
+        for ii in 1...4 {
+            newCharacter = String(wordString[ii] as Character)
             if newCharacter == "I" {
                 newCharacter = "1"
                 randomOneValue = arc4random_uniform(UInt32(oneColors.count))
                 colorInt = oneColors[Int(randomOneValue)]
                 buttonCharacters.append(oneColors[Int(randomOneValue)])
+                allCharacters.append(oneColors[Int(randomOneValue)])
             }
             else if newCharacter == "O" {
                 newCharacter = "0"
                 randomZeroValue = arc4random_uniform(UInt32(zeroColors.count))
                 colorInt = zeroColors[Int(randomZeroValue)]
                 buttonCharacters.append(zeroColors[Int(randomZeroValue)])
+                allCharacters.append(zeroColors[Int(randomZeroValue)])
             }
-            if ii == 0 {
+            else {
+                allCharacters.append(-1)
+            }
+            if ii == 1 {
                 letterOne.string = newCharacter
                 if newCharacter == "0" || newCharacter == "1" {
                     letterOne.fontColor = getColor(colorInt)
@@ -388,7 +270,7 @@ class Game: CCScene {
                     letterOne.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
                 }
             }
-            else if ii == 1 {
+            else if ii == 2 {
                 letterTwo.string = newCharacter
                 if newCharacter == "0" || newCharacter == "1" {
                     letterTwo.fontColor = getColor(colorInt)
@@ -397,7 +279,7 @@ class Game: CCScene {
                     letterTwo.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
                 }
             }
-            else if ii == 2 {
+            else if ii == 3 {
                 letterThree.string = newCharacter
                 if newCharacter == "0" || newCharacter == "1" {
                     letterThree.fontColor = getColor(colorInt)
@@ -406,7 +288,7 @@ class Game: CCScene {
                     letterThree.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
                 }
             }
-            else if ii == 3 {
+            else if ii == 4 {
                 letterFour.string = newCharacter
                 if newCharacter == "0" || newCharacter == "1" {
                     letterFour.fontColor = getColor(colorInt)
@@ -420,14 +302,38 @@ class Game: CCScene {
     }
     
     func checkLetter (colorNumber: Int) {
+        var finished : Bool = false
+        var characterSlot : Int = -1
         if checkingCharacter == buttonCharacters[0] {
+            OALSimpleAudio.sharedInstance().playEffect("Correct.wav")
+            for ii in 0...3 {
+                if checkingCharacter == allCharacters[ii] && finished == false {
+                    characterSlot = ii
+                    finished = true
+                    allCharacters[ii] = -1
+                }
+            }
+            if characterSlot == 0 {
+                letterOne.fontColor = getColor(5)
+            }
+            else if characterSlot == 1 {
+                letterTwo.fontColor = getColor(5)
+            }
+            else if characterSlot == 2 {
+                letterThree.fontColor = getColor(5)
+            }
+            else {
+                letterFour.fontColor = getColor(5)
+            }
             buttonCharacters.removeAtIndex(0)
         }
         else {
             gameOver()
         }
         if buttonCharacters.count == 0 {
+            allCharacters.removeAll()
             levelCounter++
+            speedCounter++
             getScore()
             if Int(levelCounter)%Int(newButtonCounter) == 0 {
                 startCounter = 1
@@ -467,14 +373,17 @@ class Game: CCScene {
         retryButton.position = ccp(20,110)
         trophyButton.position = ccp(120,110)
         menuButton.position = ccp(220,110)
+        OALSimpleAudio.sharedInstance().playEffect("Fail.wav")
     }
     
     func getColor (number: Int) -> CCColor {
         let red = CCColor(red: 1.0, green: 0.0, blue: 0.0)
         let green = CCColor(red: 0.0, green: 1.0, blue: 0.0)
-        let blue = CCColor(red: 0.0, green: 0.0, blue: 1.0)
+        let blue = CCColor(red: 0.0078, green: 0.6289, blue: 0.9375)
         let orange = CCColor(red: 1.0, green: 0.4745, blue: 0.0392)
         let white = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+        let gold = CCColor(red:1.0, green: 0.8125, blue: 0.1602)
+        let black = CCColor(red:0.0, green:0.0, blue:0.0)
         
         if number == 1 {
             return red
@@ -487,6 +396,9 @@ class Game: CCScene {
         }
         else if number == 4 {
             return orange
+        }
+        else if number == 5 {
+            return white
         }
         else if number == 6 {
             return red
