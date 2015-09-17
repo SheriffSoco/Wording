@@ -20,6 +20,7 @@
 		16B242C11B62005D0008D062 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16B242BE1B62005D0008D062 /* Correct.wav */; };
 		16B242C21B62005D0008D062 /* Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16B242BF1B62005D0008D062 /* Fail.wav */; };
 		16B242C31B62005D0008D062 /* LevelUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16B242C01B62005D0008D062 /* LevelUp.wav */; };
+		16F198401B9CDD2D00784C35 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1983F1B9CDD2D00784C35 /* GameButton.swift */; };
 		5B121030197484FA004C1E1D /* WordingActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* WordingActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A046D7519E84C36004C4763 /* MainScene.swift */; };
@@ -166,6 +167,7 @@
 		16B242BF1B62005D0008D062 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Fail.wav; path = ../Sounds/Fail.wav; sourceTree = "<group>"; };
 		16B242C01B62005D0008D062 /* LevelUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = LevelUp.wav; path = ../Sounds/LevelUp.wav; sourceTree = "<group>"; };
 		16D20F0D1AFD359900E9C0A1 /* scratchpad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = scratchpad.playground; sourceTree = "<group>"; };
+		16F1983F1B9CDD2D00784C35 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				163309D21B39179400A485ED /* NewButtonParticles.swift */,
 				160C73741AF3F76F00106636 /* Game.swift */,
 				165A8CF21B190C170050388E /* MenuButton.swift */,
+				16F1983F1B9CDD2D00784C35 /* GameButton.swift */,
 				16509F3A1B065F6B001D6D3B /* Letter.swift */,
 				16D20F0D1AFD359900E9C0A1 /* scratchpad.playground */,
 			);
@@ -849,6 +852,7 @@
 				16509F3B1B065F6B001D6D3B /* Letter.swift in Sources */,
 				1661CF011B7AF7CC000F4B89 /* WordGrabber.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				16F198401B9CDD2D00784C35 /* GameButton.swift in Sources */,
 				160C73751AF3F76F00106636 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

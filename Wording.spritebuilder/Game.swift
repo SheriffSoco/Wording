@@ -29,7 +29,16 @@ class Game: CCScene {
     var blueNode : CCNode!
     var greenNode : CCNode!
     var orangeNode : CCNode!
+    var redZeroNode : CCNode!
+    var redOneNode : CCNode!
+    var blueZeroNode : CCNode!
+    var blueOneNode : CCNode!
+    var greenZeroNode : CCNode!
+    var greenOneNode : CCNode!
+    var orangeZeroNode : CCNode!
+    var orangeOneNode : CCNode!
     var particleNode : CCNode!
+    var buttonBackground : CCNodeColor!
     var nodeArray : [CCNode] = []
     var whiteZeroButton : CCButton!
     var whiteOneButton : CCButton!
@@ -44,13 +53,22 @@ class Game: CCScene {
     var retryButton : CCButton!
     var trophyButton : CCButton!
     var menuButton : CCButton!
-    var buttonArray : [CCButton] = []
+    var redZeroImage : GameButton!
+    var redOneImage : GameButton!
+    var blueZeroImage : GameButton!
+    var blueOneImage : GameButton!
+    var greenZeroImage : GameButton!
+    var greenOneImage : GameButton!
+    var orangeZeroImage : GameButton!
+    var orangeOneImage : GameButton!
+    var buttonArray : [CCNode] = []
     var letterOne : CCLabelTTF!
     var letterTwo : CCLabelTTF!
     var letterThree : CCLabelTTF!
     var letterFour : CCLabelTTF!
     var score : CCLabelTTF!
     var gameOverText : CCLabelTTF!
+    var title : CCLabelTTF!
     var scoreBar : CCSprite!
     var newParticles : CCParticleSystem!
     var zeroColors : [Int] = [] //The colors of the visible buttons
@@ -68,9 +86,11 @@ class Game: CCScene {
     var buttonPatternCounter : Int = 0
     var stepCounter : Int = 0
     var startCounter : Int = 0
+    var loadCounter : Int = 0
     var moveButtons : Bool = false
     var allZeros : Bool = false
     var allOnes : Bool = false
+    var initialLoad : Bool = true
     var isGameOver = false
     var newWord = WordGrabber()
     
@@ -82,39 +102,82 @@ class Game: CCScene {
         nodeArray.append(greenNode)
         nodeArray.append(blueNode)
         nodeArray.append(orangeNode)
-        buttonArray.append(redZeroButton)
-        buttonArray.append(greenZeroButton)
-        buttonArray.append(blueZeroButton)
-        buttonArray.append(orangeZeroButton)
-        buttonArray.append(redOneButton)
-        buttonArray.append(greenOneButton)
-        buttonArray.append(blueOneButton)
-        buttonArray.append(orangeOneButton)
+        buttonArray.append(redZeroNode)
+        buttonArray.append(greenZeroNode)
+        buttonArray.append(blueZeroNode)
+        buttonArray.append(orangeZeroNode)
+        buttonArray.append(redOneNode)
+        buttonArray.append(greenOneNode)
+        buttonArray.append(blueOneNode)
+        buttonArray.append(orangeOneNode)
+        redZeroImage.loadParticles()
+        redOneImage.loadParticles()
+        greenZeroImage.loadParticles()
+        greenOneImage.loadParticles()
+        blueZeroImage.loadParticles()
+        blueOneImage.loadParticles()
+        orangeZeroImage.loadParticles()
+        orangeOneImage.loadParticles()
+        letterOne.opacity = 0
+        letterTwo.opacity = 0
+        letterThree.opacity = 0
+        letterFour.opacity = 0
         score.string = "0"
-        /*particles
-        newParticles = [CCBReader load:"newButtonParticles"];
-        newParticles.autoRemoveOnFinish = true
-        newParticles.position = ccp(160,221)*/
-        loadNewButtons()
-        loadNewWord()
         self.userInteractionEnabled = true
     }
     
     override func update(delta: CCTime) {
-        if startCounter > 0 {
-            redZeroButton.position = ccp(redZeroButton.position.x + 60.225,redZeroButton.position.y)
-            greenZeroButton.position = ccp(greenZeroButton.position.x + 60.225,greenZeroButton.position.y)
-            blueZeroButton.position = ccp(blueZeroButton.position.x + 60.225,blueZeroButton.position.y)
-            orangeZeroButton.position = ccp(orangeZeroButton.position.x + 60.225,orangeZeroButton.position.y)
-            redOneButton.position = ccp(redOneButton.position.x + 60.225,redOneButton.position.y)
-            greenOneButton.position = ccp(greenOneButton.position.x + 60.225,greenOneButton.position.y)
-            blueOneButton.position = ccp(blueOneButton.position.x + 60.225,blueOneButton.position.y)
-            orangeOneButton.position = ccp(orangeOneButton.position.x + 60.225,orangeOneButton.position.y)
+        redZeroImage.moveParticles(0.5)
+        redOneImage.moveParticles(0.5)
+        greenZeroImage.moveParticles(0.5)
+        greenOneImage.moveParticles(0.5)
+        blueZeroImage.moveParticles(0.5)
+        blueOneImage.moveParticles(0.5)
+        orangeZeroImage.moveParticles(0.5)
+        orangeOneImage.moveParticles(0.5)
+        if initialLoad == true {
+            buttonBackground.opacity = buttonBackground.opacity + 0.02
+            scoreBar.position = ccp(scoreBar.position.x + 8,scoreBar.position.y)
+            loadCounter++
+            if loadCounter == 50 {
+                initialLoad = false
+                letterOne.opacity = 1
+                letterTwo.opacity = 1
+                letterThree.opacity = 1
+                letterFour.opacity = 1
+                title.opacity = 0
+                loadNewButtons()
+                loadNewWord()
+            }
+        }
+        else if startCounter > 0 {
+            redZeroNode.position = ccp(redZeroNode.position.x + 60.225,redZeroNode.position.y)
+            greenZeroNode.position = ccp(greenZeroNode.position.x + 60.225,greenZeroNode.position.y)
+            blueZeroNode.position = ccp(blueZeroNode.position.x + 60.225,blueZeroNode.position.y)
+            orangeZeroNode.position = ccp(orangeZeroNode.position.x + 60.225,orangeZeroNode.position.y)
+            redOneNode.position = ccp(redOneNode.position.x + 60.225,redOneNode.position.y)
+            greenOneNode.position = ccp(greenOneNode.position.x + 60.225,greenOneNode.position.y)
+            blueOneNode.position = ccp(blueOneNode.position.x + 60.225,blueOneNode.position.y)
+            orangeOneNode.position = ccp(orangeOneNode.position.x + 60.225,orangeOneNode.position.y)
             startCounter++
             if startCounter == 5 {
                 startCounter = 0
                 loadNewButtons()
                 loadNewWord()
+            }
+        }
+        else if moveButtons == true {
+            redZeroNode.position = ccp(redZeroNode.position.x + 60.225,redZeroNode.position.y)
+            greenZeroNode.position = ccp(greenZeroNode.position.x + 60.225,greenZeroNode.position.y)
+            blueZeroNode.position = ccp(blueZeroNode.position.x + 60.225,blueZeroNode.position.y)
+            orangeZeroNode.position = ccp(orangeZeroNode.position.x + 60.225,orangeZeroNode.position.y)
+            redOneNode.position = ccp(redOneNode.position.x + 60.225,redOneNode.position.y)
+            greenOneNode.position = ccp(greenOneNode.position.x + 60.225,greenOneNode.position.y)
+            blueOneNode.position = ccp(blueOneNode.position.x + 60.225,blueOneNode.position.y)
+            orangeOneNode.position = ccp(orangeOneNode.position.x + 60.225,orangeOneNode.position.y)
+            stepCounter++
+            if stepCounter == 10 {
+                moveButtons = false
             }
         }
         else if isGameOver != true {
@@ -125,20 +188,6 @@ class Game: CCScene {
                 gameOver()
             }
         }
-        if moveButtons == true {
-            redZeroButton.position = ccp(redZeroButton.position.x + 60.225,redZeroButton.position.y)
-            greenZeroButton.position = ccp(greenZeroButton.position.x + 60.225,greenZeroButton.position.y)
-            blueZeroButton.position = ccp(blueZeroButton.position.x + 60.225,blueZeroButton.position.y)
-            orangeZeroButton.position = ccp(orangeZeroButton.position.x + 60.225,orangeZeroButton.position.y)
-            redOneButton.position = ccp(redOneButton.position.x + 60.225,redOneButton.position.y)
-            greenOneButton.position = ccp(greenOneButton.position.x + 60.225,greenOneButton.position.y)
-            blueOneButton.position = ccp(blueOneButton.position.x + 60.225,blueOneButton.position.y)
-            orangeOneButton.position = ccp(orangeOneButton.position.x + 60.225,orangeOneButton.position.y)
-            stepCounter++
-            if stepCounter == 10 {
-                moveButtons = false
-            }
-        }
     }
     
     func loadNewButtons () {
@@ -147,27 +196,27 @@ class Game: CCScene {
         oneColors.removeAll()
         allZeros = false
         allOnes = false
-        whiteNode.position = ccp(25,0)
-        redNode.position = ccp(25,0)
-        greenNode.position = ccp(25,0)
-        blueNode.position = ccp(25,0)
-        orangeNode.position = ccp(25,0)
-        redZeroButton.position = ccp(0,0)
-        redOneButton.position = ccp(147.5,0)
-        blueZeroButton.position = ccp(0,0)
-        blueOneButton.position = ccp(147.5,0)
-        greenZeroButton.position = ccp(0,0)
-        greenOneButton.position = ccp(147.5,0)
-        orangeZeroButton.position = ccp(0,0)
-        orangeOneButton.position = ccp(147.5,0)
+        whiteNode.position = ccp(25,-20)
+        redNode.position = ccp(25,-20)
+        greenNode.position = ccp(25,-20)
+        blueNode.position = ccp(25,-20)
+        orangeNode.position = ccp(25,-20)
+        redZeroNode.position = ccp(0,0)
+        redOneNode.position = ccp(147.5,0)
+        blueZeroNode.position = ccp(0,0)
+        blueOneNode.position = ccp(147.5,0)
+        greenZeroNode.position = ccp(0,0)
+        greenOneNode.position = ccp(147.5,0)
+        orangeZeroNode.position = ccp(0,0)
+        orangeOneNode.position = ccp(147.5,0)
         if buttonPatternCounter <= 2 {
             var firstNode : UInt32 = arc4random_uniform(4) //Take new colors
             var secondNode : UInt32 = arc4random_uniform(4)
             while secondNode == firstNode {
                 secondNode = arc4random_uniform(4)
             }
-            nodeArray[Int(firstNode)].position = ccp(-577.25,373) //Position Buttons
-            nodeArray[Int(secondNode)].position = ccp(-577.25, 235.5)
+            nodeArray[Int(firstNode)].position = ccp(-577.25,388) //Position Buttons
+            nodeArray[Int(secondNode)].position = ccp(-577.25, 220.5)
             zeroColors.append(numberArray[Int(firstNode)]) //Edit array so correct colors are being used below
             zeroColors.append(numberArray[Int(secondNode)])
             oneColors.append(numberArray[Int(firstNode)+4])
@@ -187,10 +236,10 @@ class Game: CCScene {
             while fourthButton == firstButton || fourthButton == secondButton || fourthButton == thirdButton {
                 fourthButton = arc4random_uniform(8)
             }
-            buttonArray[Int(firstButton)].position = ccp(-602.25,373)
-            buttonArray[Int(secondButton)].position = ccp(-454.75,373)
-            buttonArray[Int(thirdButton)].position = ccp(-602.25,235.5)
-            buttonArray[Int(fourthButton)].position = ccp(-454.75,235.5)
+            buttonArray[Int(firstButton)].position = ccp(-602.25,388)
+            buttonArray[Int(secondButton)].position = ccp(-454.75,388)
+            buttonArray[Int(thirdButton)].position = ccp(-602.25,220.5)
+            buttonArray[Int(fourthButton)].position = ccp(-454.75,220.5)
             if firstButton < 4 {
                 zeroColors.append(numberArray[Int(firstButton)])
             }
@@ -233,6 +282,7 @@ class Game: CCScene {
         var newCharacter : String = ""
         var wordString : String = ""
         var colorInt : Int = 0
+        scoreBar.position = ccp(0,438)
         if allZeros == true {
             wordString = newWord.loadNewWord(1)
         }
@@ -267,7 +317,7 @@ class Game: CCScene {
                     letterOne.fontColor = getColor(colorInt)
                 }
                 else {
-                    letterOne.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+                    letterOne.fontColor = CCColor(red: 0.0, green: 0.0, blue: 0.0)
                 }
             }
             else if ii == 2 {
@@ -276,7 +326,7 @@ class Game: CCScene {
                     letterTwo.fontColor = getColor(colorInt)
                 }
                 else {
-                    letterTwo.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+                    letterTwo.fontColor = CCColor(red: 0.0, green: 0.0, blue: 0.0)
                 }
             }
             else if ii == 3 {
@@ -285,7 +335,7 @@ class Game: CCScene {
                     letterThree.fontColor = getColor(colorInt)
                 }
                 else {
-                    letterThree.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+                    letterThree.fontColor = CCColor(red: 0.0, green: 0.0, blue: 0.0)
                 }
             }
             else if ii == 4 {
@@ -294,11 +344,10 @@ class Game: CCScene {
                     letterFour.fontColor = getColor(colorInt)
                 }
                 else {
-                    letterFour.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+                    letterFour.fontColor = CCColor(red: 0.0, green: 0.0, blue: 0.0)
                 }
             }
         }
-        scoreBar.position = ccp(0,438)
     }
     
     func checkLetter (colorNumber: Int) {
@@ -356,19 +405,19 @@ class Game: CCScene {
     
     func gameOver() {
         isGameOver = true
-        whiteNode.position = ccp(25,0)
-        redNode.position = ccp(25,0)
-        greenNode.position = ccp(25,0)
-        blueNode.position = ccp(25,0)
-        orangeNode.position = ccp(25,0)
-        redZeroButton.position = ccp(0,0)
-        redOneButton.position = ccp(147.5,0)
-        blueZeroButton.position = ccp(0,0)
-        blueOneButton.position = ccp(147.5,0)
-        greenZeroButton.position = ccp(0,0)
-        greenOneButton.position = ccp(147.5,0)
-        orangeZeroButton.position = ccp(0,0)
-        orangeOneButton.position = ccp(147.5,0)
+        whiteNode.position = ccp(25,-20)
+        redNode.position = ccp(25,-20)
+        greenNode.position = ccp(25,-20)
+        blueNode.position = ccp(25,-20)
+        orangeNode.position = ccp(25,-20)
+        redZeroNode.position = ccp(0,0)
+        redOneNode.position = ccp(147.5,0)
+        blueZeroNode.position = ccp(0,0)
+        blueOneNode.position = ccp(147.5,0)
+        greenZeroNode.position = ccp(0,0)
+        greenOneNode.position = ccp(147.5,0)
+        orangeZeroNode.position = ccp(0,0)
+        orangeOneNode.position = ccp(147.5,0)
         gameOverText.visible = true
         retryButton.position = ccp(20,110)
         trophyButton.position = ccp(120,110)
@@ -412,7 +461,7 @@ class Game: CCScene {
         else if number == 9 {
             return orange
         }
-        return white
+        return black
     }
     
     func whiteZero() {

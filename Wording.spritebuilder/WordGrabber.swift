@@ -13,9 +13,9 @@ class WordGrabber {
     var mixedLocation = "/Users/Jacob/Desktop/Swift/Wording/mixedwords.txt"
     var oLocation = "/Users/Jacob/Desktop/Swift/Wording/owords.txt"
     var iLocation = "/Users/Jacob/Desktop/Swift/Wording/iwords.txt"
-    var mixedLength : Int = 21
-    var oLength : Int = 427
-    var iLength : Int = 323
+    var mixedLength : Int = 20
+    var oLength : Int = 426
+    var iLength : Int = 322
     var wordIndexer : UInt32 = 0
     var listIndexer : UInt32 = 0
     var mixedFileContent : NSString? = ""
@@ -34,12 +34,12 @@ class WordGrabber {
         
         switch lists {
         case 1:
-            wordIndexer = arc4random_uniform(UInt32(oLength))
+            wordIndexer = arc4random_uniform(UInt32(oLength)) + 1
             word = oArray![Int(wordIndexer)] as String
             break;
             
         case 2:
-            wordIndexer = arc4random_uniform(UInt32(iLength))
+            wordIndexer = arc4random_uniform(UInt32(iLength)) + 1
             word = iArray![Int(wordIndexer)] as String
             break;
             
@@ -47,17 +47,17 @@ class WordGrabber {
             listIndexer = arc4random_uniform(UInt32(3)) + 1
             switch listIndexer {
             case 1 :
-                wordIndexer = arc4random_uniform(UInt32(oLength))
+                wordIndexer = arc4random_uniform(UInt32(oLength)) + 1
                 word = oArray![Int(wordIndexer)] as String
                 break;
                 
             case 2 :
-                wordIndexer = arc4random_uniform(UInt32(iLength))
+                wordIndexer = arc4random_uniform(UInt32(iLength)) + 1
                 word = iArray![Int(wordIndexer)] as String
                 break;
                 
             case 3 :
-                wordIndexer = arc4random_uniform(UInt32(mixedLength))
+                wordIndexer = arc4random_uniform(UInt32(mixedLength)) + 1
                 word = mixedArray![Int(wordIndexer)] as String
                 break;
                 
