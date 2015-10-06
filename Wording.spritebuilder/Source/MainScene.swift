@@ -20,11 +20,41 @@ class MainScene: CCNode {
     var creditNode : CCNode!
     var timeCounter : Int = 0
     var caseVariable : Int = 0
+    var subCaseVariable : Int = 0
+    //helpScreen
+    var helpScene : CCNode!
+    var letterOne : CCLabelTTF!
+    var letterTwo : CCLabelTTF!
+    var letterThree : CCLabelTTF!
+    var letterFour : CCLabelTTF!
+    var helpText : CCLabelTTF!
+    var scoreBar : CCNodeColor!
+    var buttonBackground : CCNodeColor!
+    var helpBackground : CCNodeColor!
+    var redZeroNode : CCNode!
+    var redOneNode : CCNode!
+    var blueZeroNode : CCNode!
+    var blueOneNode : CCNode!
+    var redZeroImage : GameButton!
+    var redOneImage : GameButton!
+    var blueZeroImage : GameButton!
+    var blueOneImage : GameButton!
+    var redZeroButton : CCButton!
+    var redOneButton : CCButton!
+    var blueZeroButton : CCButton!
+    var blueOneButton : CCButton!
+    var sceneButton : CCButton!
+    var startHelp : Int = 0
+    var wordCase : Int = 0
     
     func didLoadFromCCB() {
         playImage.loadParticles()
         helpImage.loadParticles()
         aboutImage.loadParticles()
+        redZeroImage.loadParticles()
+        redOneImage.loadParticles()
+        blueZeroImage.loadParticles()
+        blueOneImage.loadParticles()
         playNode.position = ccp(-1314,0)
         helpNode.position = ccp(-1314,0)
         aboutNode.position = ccp(-1314,0)
@@ -32,6 +62,11 @@ class MainScene: CCNode {
         helpButton.enabled = false
         aboutButton.enabled = false
         backButton.enabled = false
+        redZeroButton.enabled = true
+        redOneButton.enabled = true
+        blueZeroButton.enabled = true
+        blueOneButton.enabled = true
+        sceneButton.enabled = false
         self.userInteractionEnabled = true
     }
     
@@ -39,6 +74,10 @@ class MainScene: CCNode {
         playImage.moveParticles(0.5)
         helpImage.moveParticles(0.5)
         aboutImage.moveParticles(0.5)
+        redZeroImage.moveParticles(0.5)
+        redOneImage.moveParticles(0.5)
+        blueZeroImage.moveParticles(0.5)
+        blueOneImage.moveParticles(0.5)
         initialNodeMove(timeCounter, choice: caseVariable)
         if timeCounter == 80 && caseVariable == 1 {
             let mainScene: CCScene = CCBReader.loadAsScene("Game")
@@ -57,12 +96,38 @@ class MainScene: CCNode {
     }
     
     func help() {
-        
+        timeCounter = 0
+        caseVariable = 2
+        subCaseVariable = 0
+        wordCase = 0
+        letterOne.string = "L"
+        letterTwo.string = "1"
+        letterThree.string = "0"
+        letterFour.string = "N"
+        letterOne.fontColor = CCColor(red:0.0, green:0.0, blue:0.0)
+        letterTwo.fontColor = CCColor(red: 0.0078, green: 0.6289, blue: 0.9375)
+        letterThree.fontColor = CCColor(red: 1.0, green: 0.0, blue: 0.0)
+        letterFour.fontColor = CCColor(red:0.0, green:0.0, blue:0.0)
+        helpBackground.opacity = 0
+        buttonBackground.opacity = 0
+        helpText.opacity = 0
+        letterOne.opacity = 0
+        letterTwo.opacity = 0
+        letterThree.opacity = 0
+        letterFour.opacity = 0
+        redZeroButton.position = ccp(-1000,0)
+        redOneButton.position = ccp(-1000,0)
+        blueZeroButton.position = ccp(-1000,0)
+        blueOneButton.position = ccp(-1000,0)
+        scoreBar.position = ccp(-420, scoreBar.position.y)
+        playButton.enabled = false
+        helpButton.enabled = false
+        aboutButton.enabled = false
     }
     
     func about() {
         timeCounter = 0
-        caseVariable = 2
+        caseVariable = 3
         playButton.enabled = false
         helpButton.enabled = false
         aboutButton.enabled = false
@@ -71,7 +136,7 @@ class MainScene: CCNode {
     
     func back() {
         timeCounter = 0
-        caseVariable = 3
+        caseVariable = 4
         playButton.enabled = false
         helpButton.enabled = false
         aboutButton.enabled = false
@@ -125,6 +190,164 @@ class MainScene: CCNode {
             }
             break;
         case 2:
+            switch subCaseVariable {
+            case 0:
+                if time == 0 {
+                    helpScene.visible = true
+                }
+                if time < 10 {
+                    helpBackground.opacity = helpBackground.opacity + 0.10
+                }
+                else if time < 20 {
+                    helpText.opacity = helpText.opacity + 0.10
+                }
+                else {
+                    sceneButton.enabled = true
+                }
+                break;
+            case 1:
+                if time < 10 {
+                    letterOne.opacity = letterOne.opacity + 0.10
+                    letterTwo.opacity = letterTwo.opacity + 0.10
+                    letterThree.opacity = letterThree.opacity + 0.10
+                    letterFour.opacity = letterFour.opacity + 0.10
+                    helpText.opacity = helpText.opacity - 0.10
+                }
+                else if time == 10 {
+                    helpText.string = "Words have colored 0's and 1's"
+                }
+                else if time < 21 {
+                    helpText.opacity = helpText.opacity + 0.10
+                }
+                else {
+                    sceneButton.enabled = true
+                }
+                break;
+            case 2:
+                if time < 10 {
+                    redZeroNode.position = ccp(redZeroNode.position.x + 40, redZeroNode.position.y)
+                    redOneNode.position = ccp(redOneNode.position.x + 40, redOneNode.position.y)
+                    blueZeroNode.position = ccp(blueZeroNode.position.x + 40, blueZeroNode.position.y)
+                    blueOneNode.position = ccp(blueOneNode.position.x + 40, blueOneNode.position.y)
+                    buttonBackground.opacity = buttonBackground.opacity + 0.10
+                    helpText.opacity = helpText.opacity - 0.10
+                }
+                else if time == 10 {
+                    helpText.string = "Tap the buttons that match\nthe colored 0's and 1's"
+                }
+                else if time < 21 {
+                    helpText.opacity = helpText.opacity + 0.10
+                }
+                else {
+                    sceneButton.enabled = true
+                }
+                break;
+            case 3:
+                if time == 0 {
+                    helpText.string = "The 1 is blue"
+                    sceneButton.enabled = true
+                }
+                break;
+            case 4:
+                if time == 0 {
+                    blueOneButton.position = ccp(0,0)
+                    helpText.string = "Tap the button with the blue 1"
+                }
+                break;
+            case 5:
+                if time == 0 {
+                    blueOneButton.position = ccp(-1000,0)
+                    helpText.string = "The 0 is red"
+                    sceneButton.enabled = true
+                }
+                break;
+            case 6:
+                if time == 0 {
+                    redZeroButton.position = ccp(0,0)
+                    helpText.string = "Tap the button with the red 0"
+                }
+                break;
+            case 7:
+                if time < 10 {
+                    redZeroButton.position = ccp(-1000,0)
+                    scoreBar.position = ccp(scoreBar.position.x + 20, scoreBar.position.y)
+                    helpText.opacity = helpText.opacity - 0.10
+                }
+                else if time == 10 {
+                    helpText.string = "There's a timer below the word"
+                    scoreBar.position = ccp(scoreBar.position.x + 20, scoreBar.position.y)
+                }
+                else if time < 21 {
+                    helpText.opacity = helpText.opacity + 0.10
+                    scoreBar.position = ccp(scoreBar.position.x + 20, scoreBar.position.y)
+                }
+                else {
+                    sceneButton.enabled = true
+                }
+                break;
+            case 8:
+                if time == 0 {
+                    helpText.string = "Complete the word before\ntime runs out"
+                    letterOne.string = "M"
+                    letterTwo.string = "0"
+                    letterThree.string = "N"
+                    letterFour.string = "0"
+                    letterOne.fontColor = CCColor(red:0.0, green:0.0, blue:0.0)
+                    letterTwo.fontColor = CCColor(red: 0.0078, green: 0.6289, blue: 0.9375)
+                    letterThree.fontColor = CCColor(red:0.0, green:0.0, blue:0.0)
+                    letterFour.fontColor = CCColor(red: 1.0, green: 0.0, blue: 0.0)
+                    redZeroButton.position = ccp(0,0)
+                    redOneButton.position = ccp(0,0)
+                    blueZeroButton.position = ccp(0,0)
+                    blueOneButton.position = ccp(0,0)
+                    wordCase = 2
+                }
+                scoreBar.position = ccp(scoreBar.position.x - 1, scoreBar.position.y)
+                if scoreBar.position.x == -320 {
+                    scoreBar.position = ccp(0, scoreBar.position.y)
+                }
+                break;
+            case 9:
+                if time < 21 {
+                    helpText.string = "Good!"
+                }
+                else if time < 31 {
+                    redZeroNode.position = ccp(redZeroNode.position.x - 40, redZeroNode.position.y)
+                    redOneNode.position = ccp(redOneNode.position.x - 40, redOneNode.position.y)
+                    blueZeroNode.position = ccp(blueZeroNode.position.x - 40, blueZeroNode.position.y)
+                    blueOneNode.position = ccp(blueOneNode.position.x - 40, blueOneNode.position.y)
+                    scoreBar.position = ccp(scoreBar.position.x - 20, scoreBar.position.y)
+                }
+                else if time < 41 {
+                    scoreBar.position = ccp(scoreBar.position.x - 20, scoreBar.position.y)
+                }
+                else if time < 51 {
+                    scoreBar.position = ccp(scoreBar.position.x - 20, scoreBar.position.y)
+                    buttonBackground.opacity = buttonBackground.opacity - 0.10
+                }
+                else if time < 61 {
+                    letterOne.opacity = letterOne.opacity - 0.10
+                    letterTwo.opacity = letterTwo.opacity - 0.10
+                    letterThree.opacity = letterThree.opacity - 0.10
+                    letterFour.opacity = letterFour.opacity - 0.10
+                    helpText.opacity = helpText.opacity - 0.10
+                }
+                else if time < 71 {
+                    helpBackground.opacity = helpBackground.opacity - 0.10
+                }
+                else if time == 72 {
+                    helpScene.visible = false
+                    playButton.enabled = true
+                    helpButton.enabled = true
+                    aboutButton.enabled = true
+                    helpText.string = "Welcome to Wording!\nLet's begin!"
+                }
+                break;
+            default:
+                println("Something went wrong :(")
+            }
+            break;
+        case 3:
             yy = CGFloat(time)
             yposition = yy ^^ 2
             if yy < 28 {
@@ -140,7 +363,7 @@ class MainScene: CCNode {
                 backButton.enabled = true
             }
             break;
-        case 3:
+        case 4:
             yy = CGFloat(time)
             yposition = -(yy ^^ 2) + 750
             if yy < 28 {
@@ -158,6 +381,44 @@ class MainScene: CCNode {
             break;
         default:
             println("Something went wrong :(")
+        }
+    }
+    
+    func updateHelp() {
+        subCaseVariable++
+        timeCounter = 0
+        sceneButton.enabled = false
+    }
+    
+    func redZero() {
+        if subCaseVariable == 6 {
+            letterThree.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+            subCaseVariable++
+            timeCounter = 0
+        }
+        else if subCaseVariable == 8 {
+            letterFour.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+            wordCase = 0
+            subCaseVariable++
+            timeCounter = 0
+        }
+    }
+    
+    func redOne() {
+    }
+    
+    func blueZero() {
+        if subCaseVariable == 8 && wordCase == 2 {
+            letterTwo.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+            wordCase = 1
+        }
+    }
+    
+    func blueOne() {
+        if subCaseVariable == 4 {
+            letterTwo.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
+            subCaseVariable++
+            timeCounter = 0
         }
     }
 }

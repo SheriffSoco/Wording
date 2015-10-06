@@ -197,26 +197,26 @@ class Game: CCScene {
         allZeros = false
         allOnes = false
         whiteNode.position = ccp(25,-20)
-        redNode.position = ccp(25,-20)
-        greenNode.position = ccp(25,-20)
-        blueNode.position = ccp(25,-20)
-        orangeNode.position = ccp(25,-20)
+        redNode.position = ccp(22,-20)
+        greenNode.position = ccp(22,-20)
+        blueNode.position = ccp(22,-20)
+        orangeNode.position = ccp(22,-20)
         redZeroNode.position = ccp(0,0)
-        redOneNode.position = ccp(147.5,0)
+        redOneNode.position = ccp(148,0)
         blueZeroNode.position = ccp(0,0)
-        blueOneNode.position = ccp(147.5,0)
+        blueOneNode.position = ccp(148,0)
         greenZeroNode.position = ccp(0,0)
-        greenOneNode.position = ccp(147.5,0)
+        greenOneNode.position = ccp(148,0)
         orangeZeroNode.position = ccp(0,0)
-        orangeOneNode.position = ccp(147.5,0)
+        orangeOneNode.position = ccp(148,0)
         if buttonPatternCounter <= 2 {
             var firstNode : UInt32 = arc4random_uniform(4) //Take new colors
             var secondNode : UInt32 = arc4random_uniform(4)
             while secondNode == firstNode {
                 secondNode = arc4random_uniform(4)
             }
-            nodeArray[Int(firstNode)].position = ccp(-577.25,388) //Position Buttons
-            nodeArray[Int(secondNode)].position = ccp(-577.25, 220.5)
+            nodeArray[Int(firstNode)].position = ccp(-580.25,388) //Position Buttons
+            nodeArray[Int(secondNode)].position = ccp(-580.25, 220.5)
             zeroColors.append(numberArray[Int(firstNode)]) //Edit array so correct colors are being used below
             zeroColors.append(numberArray[Int(secondNode)])
             oneColors.append(numberArray[Int(firstNode)+4])
@@ -236,10 +236,10 @@ class Game: CCScene {
             while fourthButton == firstButton || fourthButton == secondButton || fourthButton == thirdButton {
                 fourthButton = arc4random_uniform(8)
             }
-            buttonArray[Int(firstButton)].position = ccp(-602.25,388)
-            buttonArray[Int(secondButton)].position = ccp(-454.75,388)
-            buttonArray[Int(thirdButton)].position = ccp(-602.25,220.5)
-            buttonArray[Int(fourthButton)].position = ccp(-454.75,220.5)
+            buttonArray[Int(firstButton)].position = ccp(-602.25,408)
+            buttonArray[Int(secondButton)].position = ccp(-454.25,408)
+            buttonArray[Int(thirdButton)].position = ccp(-602.25,240.5)
+            buttonArray[Int(fourthButton)].position = ccp(-454.25,240.5)
             if firstButton < 4 {
                 zeroColors.append(numberArray[Int(firstButton)])
             }
