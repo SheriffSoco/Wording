@@ -13,8 +13,8 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Settings</string>
-		<string>iPhone</string>
-		<string>iPhone-old</string>
+		<string>iPhone.png</string>
+		<string>iPhone-old.png</string>
 		<string>Icon.png</string>
 		<string>Icon@2x.png</string>
 		<string>Icon-72.png</string>
@@ -25,10 +25,10 @@
 	<key>CFBundleIconFiles~ipad</key>
 	<array>
 		<string>Settings</string>
-		<string>iPad</string>
-		<string>iPad-old</string>
-		<string>iPhone</string>
-		<string>iPhone-old</string>
+		<string>iPad.png</string>
+		<string>iPad-old.png</string>
+		<string>iPhone.png</string>
+		<string>iPhone-old.png</string>
 		<string>Icon.png</string>
 		<string>Icon@2x.png</string>
 		<string>Icon-72.png</string>
