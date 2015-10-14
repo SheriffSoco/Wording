@@ -325,6 +325,16 @@
 			<key>scaleFrom</key>
 			<integer>1</integer>
 		</dict>
+		<key>MenuButtons/github.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>MenuButtons/twitter.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
 		<key>Sprites</key>
 		<dict/>
 		<key>ccbResources</key>

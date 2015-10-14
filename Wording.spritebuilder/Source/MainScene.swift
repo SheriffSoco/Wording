@@ -13,6 +13,8 @@ class MainScene: CCNode {
     var helpButton : CCButton!
     var aboutButton : CCButton!
     var backButton : CCButton!
+    var githubNode : CCNode!
+    var twitterNode : CCNode!
     var playNode : CCNode!
     var helpNode : CCNode!
     var aboutNode : CCNode!
@@ -21,6 +23,8 @@ class MainScene: CCNode {
     var timeCounter : Int = 0
     var caseVariable : Int = 0
     var subCaseVariable : Int = 0
+    var linkMove : Int = 0
+    var linkTime : Int = 0
     //helpScreen
     var helpScene : CCNode!
     var letterOne : CCLabelTTF!
@@ -83,12 +87,18 @@ class MainScene: CCNode {
             let mainScene: CCScene = CCBReader.loadAsScene("Game")
             CCDirector.sharedDirector().replaceScene(mainScene);
         }
+        if linkMove != 0 {
+            linkMovement(linkTime, choice: linkMove)
+        }
         timeCounter++
+        linkTime++
     }
     
     func play() {
         timeCounter = 0
         caseVariable = 1
+        linkMove = -1
+        linkTime = 0
         playButton.enabled = false
         helpButton.enabled = false
         aboutButton.enabled = false
@@ -143,6 +153,16 @@ class MainScene: CCNode {
         backButton.enabled = false
     }
     
+    func github() {
+        var url : NSURL? = NSURL(string: "https://github.com/SheriffSoco/Wording")
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    func twitter() {
+        var url : NSURL? = NSURL(string: "https://twitter.com/TwinningInc")
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
     func initialNodeMove(time: Int, choice: Int) {
         let pi : CGFloat = 3.14159265359
         var xposition : CGFloat
@@ -154,6 +174,7 @@ class MainScene: CCNode {
         case 0:
             xx = -(CGFloat(time-80)/180)
             xposition = -150 * (10 ^^ xx)*(cos(4*pi*xx))
+            yposition = 0.04 * (CGFloat(time - 180) ^^ 2) - 66.2
             if time < 100 {
                 playNode.position = ccp(playNode.position.x + 12.81,0)
                 helpNode.position = ccp(helpNode.position.x + 12.81,0)
@@ -163,6 +184,7 @@ class MainScene: CCNode {
                 playNode.position = ccp(xposition,0)
                 helpNode.position = ccp(xposition,0)
                 aboutNode.position = ccp(xposition,0)
+                linkTime = 0
             }
             else {
                 playNode.position = ccp(0,0)
@@ -172,6 +194,7 @@ class MainScene: CCNode {
                 helpButton.enabled = true
                 aboutButton.enabled = true
                 backButton.enabled = true
+                linkMove = 1
             }
             break;
         case 1:
@@ -379,6 +402,36 @@ class MainScene: CCNode {
                 backButton.enabled = true
             }
             break;
+        default:
+            println("Something went wrong :(")
+        }
+    }
+    
+    func linkMovement(time: Int, choice: Int) {
+        var yposition : CGFloat
+        switch choice {
+        case -1:
+            yposition = -2.94 * CGFloat(time) + 33.8
+            if time < 21 {
+                githubNode.position = ccp(githubNode.position.x, githubNode.position.y - 2.94)
+                twitterNode.position = ccp(twitterNode.position.x, twitterNode.position.y - 2.94)
+            }
+            else {
+                linkMove = 0
+            }
+            break;
+            
+        case 1:
+            yposition = 2.94 * CGFloat(time) - 25
+            if time < 21 {
+                githubNode.position = ccp(githubNode.position.x, githubNode.position.y + 2.94)
+                twitterNode.position = ccp(twitterNode.position.x, twitterNode.position.y + 2.94)
+            }
+            else {
+                linkMove = 0
+            }
+            break;
+            
         default:
             println("Something went wrong :(")
         }
