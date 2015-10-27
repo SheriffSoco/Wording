@@ -449,7 +449,7 @@ class MainScene: CCNode {
             subCaseVariable++
             timeCounter = 0
         }
-        else if subCaseVariable == 8 {
+        else if subCaseVariable == 8 && wordCase == 1 {
             letterFour.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
             wordCase = 0
             subCaseVariable++
