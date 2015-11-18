@@ -10,9 +10,6 @@ import Foundation
 
 class WordGrabber {
     var word : String = "LION"
-    var mixedLocation = "/Users/Jacob/Desktop/Swift/Wording/mixedwords.txt"
-    var oLocation = "/Users/Jacob/Desktop/Swift/Wording/owords.txt"
-    var iLocation = "/Users/Jacob/Desktop/Swift/Wording/iwords.txt"
     var mixedLength : Int = 20
     var oLength : Int = 426
     var iLength : Int = 322
@@ -23,9 +20,9 @@ class WordGrabber {
     var iFileContent : NSString? = ""
     
     func loadNewWord(lists: Int) -> String {
-        mixedFileContent = NSString(contentsOfFile: mixedLocation, encoding: NSUTF8StringEncoding, error: nil)
-        oFileContent = NSString(contentsOfFile: oLocation, encoding: NSUTF8StringEncoding, error: nil)
-        iFileContent = NSString(contentsOfFile: iLocation, encoding: NSUTF8StringEncoding, error: nil)
+        mixedFileContent = NSString(contentsOfFile:(NSBundle.mainBundle().pathForResource("mixedwords", ofType:"txt"))!, encoding: NSUTF8StringEncoding, error: nil)!
+        oFileContent = NSString(contentsOfFile:(NSBundle.mainBundle().pathForResource("owords", ofType:"txt"))!, encoding: NSUTF8StringEncoding, error: nil)!
+        iFileContent = NSString(contentsOfFile:(NSBundle.mainBundle().pathForResource("iwords", ofType:"txt"))!, encoding: NSUTF8StringEncoding, error: nil)!
         word = ""
         
         var mixedArray = mixedFileContent?.componentsSeparatedByString(",")
