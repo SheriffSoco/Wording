@@ -140,6 +140,7 @@ class Game: CCScene {
             scoreBar.position = ccp(scoreBar.position.x + 8,scoreBar.position.y)
             loadCounter++
             if loadCounter == 50 {
+                OALSimpleAudio.sharedInstance().playEffect("LevelUp.wav")
                 initialLoad = false
                 letterOne.opacity = 1
                 letterTwo.opacity = 1
@@ -386,9 +387,7 @@ class Game: CCScene {
             getScore()
             if Int(levelCounter)%Int(newButtonCounter) == 0 {
                 startCounter = 1
-                if newButtonCounter > 3 {
-                    newButtonCounter--
-                }
+                speedCounter = 0
             }
             else {
                 loadNewWord()

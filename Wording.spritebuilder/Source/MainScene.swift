@@ -52,6 +52,12 @@ class MainScene: CCNode {
     var wordCase : Int = 0
     
     func didLoadFromCCB() {
+        OALSimpleAudio.sharedInstance().preloadEffect("Correct.wav")
+        OALSimpleAudio.sharedInstance().preloadEffect("Play.wav")
+        OALSimpleAudio.sharedInstance().preloadEffect("Help.wav")
+        OALSimpleAudio.sharedInstance().preloadEffect("About.wav")
+        OALSimpleAudio.sharedInstance().preloadEffect("BackComp.wav")
+        OALSimpleAudio.sharedInstance().preloadEffect("Continue.wav")
         playImage.loadParticles()
         helpImage.loadParticles()
         aboutImage.loadParticles()
@@ -95,6 +101,7 @@ class MainScene: CCNode {
     }
     
     func play() {
+        OALSimpleAudio.sharedInstance().playEffect("Play.wav")
         timeCounter = 0
         caseVariable = 1
         linkMove = -1
@@ -106,6 +113,7 @@ class MainScene: CCNode {
     }
     
     func help() {
+        OALSimpleAudio.sharedInstance().playEffect("Help.wav")
         timeCounter = 0
         caseVariable = 2
         subCaseVariable = 0
@@ -136,6 +144,7 @@ class MainScene: CCNode {
     }
     
     func about() {
+        OALSimpleAudio.sharedInstance().playEffect("About.wav")
         timeCounter = 0
         caseVariable = 3
         playButton.enabled = false
@@ -145,6 +154,7 @@ class MainScene: CCNode {
     }
     
     func back() {
+        OALSimpleAudio.sharedInstance().playEffect("BackComp.wav")
         timeCounter = 0
         caseVariable = 4
         playButton.enabled = false
@@ -331,34 +341,34 @@ class MainScene: CCNode {
                 }
                 break;
             case 9:
-                if time < 21 {
+                if time < 41 {
                     helpText.string = "Good!"
                 }
-                else if time < 31 {
-                    redZeroNode.position = ccp(redZeroNode.position.x - 40, redZeroNode.position.y)
-                    redOneNode.position = ccp(redOneNode.position.x - 40, redOneNode.position.y)
-                    blueZeroNode.position = ccp(blueZeroNode.position.x - 40, blueZeroNode.position.y)
-                    blueOneNode.position = ccp(blueOneNode.position.x - 40, blueOneNode.position.y)
-                    scoreBar.position = ccp(scoreBar.position.x - 20, scoreBar.position.y)
+                else if time < 81 {
+                    redZeroNode.position = ccp(redZeroNode.position.x - 20, redZeroNode.position.y)
+                    redOneNode.position = ccp(redOneNode.position.x - 20, redOneNode.position.y)
+                    blueZeroNode.position = ccp(blueZeroNode.position.x - 20, blueZeroNode.position.y)
+                    blueOneNode.position = ccp(blueOneNode.position.x - 20, blueOneNode.position.y)
+                    scoreBar.position = ccp(scoreBar.position.x - 10, scoreBar.position.y)
                 }
-                else if time < 41 {
-                    scoreBar.position = ccp(scoreBar.position.x - 20, scoreBar.position.y)
+                else if time < 101 {
+                    scoreBar.position = ccp(scoreBar.position.x - 10, scoreBar.position.y)
                 }
-                else if time < 51 {
-                    scoreBar.position = ccp(scoreBar.position.x - 20, scoreBar.position.y)
-                    buttonBackground.opacity = buttonBackground.opacity - 0.10
+                else if time < 121 {
+                    scoreBar.position = ccp(scoreBar.position.x - 10, scoreBar.position.y)
+                    buttonBackground.opacity = buttonBackground.opacity - 0.05
                 }
-                else if time < 61 {
+                else if time < 131 {
                     letterOne.opacity = letterOne.opacity - 0.10
                     letterTwo.opacity = letterTwo.opacity - 0.10
                     letterThree.opacity = letterThree.opacity - 0.10
                     letterFour.opacity = letterFour.opacity - 0.10
                     helpText.opacity = helpText.opacity - 0.10
                 }
-                else if time < 71 {
+                else if time < 141 {
                     helpBackground.opacity = helpBackground.opacity - 0.10
                 }
-                else if time == 72 {
+                else if time == 152 {
                     helpScene.visible = false
                     playButton.enabled = true
                     helpButton.enabled = true
@@ -438,6 +448,7 @@ class MainScene: CCNode {
     }
     
     func updateHelp() {
+        OALSimpleAudio.sharedInstance().playEffect("Continue.wav")
         subCaseVariable++
         timeCounter = 0
         sceneButton.enabled = false
@@ -445,11 +456,13 @@ class MainScene: CCNode {
     
     func redZero() {
         if subCaseVariable == 6 {
+            OALSimpleAudio.sharedInstance().playEffect("Correct.wav")
             letterThree.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
             subCaseVariable++
             timeCounter = 0
         }
         else if subCaseVariable == 8 && wordCase == 1 {
+            OALSimpleAudio.sharedInstance().playEffect("Correct.wav")
             letterFour.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
             wordCase = 0
             subCaseVariable++
@@ -462,6 +475,7 @@ class MainScene: CCNode {
     
     func blueZero() {
         if subCaseVariable == 8 && wordCase == 2 {
+            OALSimpleAudio.sharedInstance().playEffect("Correct.wav")
             letterTwo.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
             wordCase = 1
         }
@@ -469,6 +483,7 @@ class MainScene: CCNode {
     
     func blueOne() {
         if subCaseVariable == 4 {
+            OALSimpleAudio.sharedInstance().playEffect("Correct.wav")
             letterTwo.fontColor = CCColor(red: 1.0, green: 1.0, blue: 1.0)
             subCaseVariable++
             timeCounter = 0

@@ -1411,9 +1411,9 @@
 								<string>Color3</string>
 								<key>value</key>
 								<array>
-									<real>0.00090527598513290286</real>
 									<real>0.0</real>
-									<real>1</real>
+									<real>0.0</real>
+									<real>0.0</real>
 									<real>1</real>
 								</array>
 							</dict>
@@ -1444,7 +1444,7 @@
 								<key>type</key>
 								<string>IntegerLabeled</string>
 								<key>value</key>
-								<integer>0</integer>
+								<integer>1</integer>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -1503,7 +1503,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>5</real>
+									<real>1</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -1515,7 +1515,7 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>-1</real>
+									<real>0.0</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -2747,9 +2747,9 @@ Designer</string>
 										<string>Color3</string>
 										<key>value</key>
 										<array>
-											<real>0.11372549831867218</real>
-											<real>0.12156863510608673</real>
-											<real>0.94117653369903564</real>
+											<real>0.0</real>
+											<real>0.0</real>
+											<real>0.0</real>
 											<real>1</real>
 										</array>
 									</dict>
@@ -2839,7 +2839,7 @@ Designer</string>
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>2</real>
+											<real>1</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -2851,7 +2851,7 @@ Designer</string>
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>-2</real>
+											<real>0.0</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -3651,9 +3651,9 @@ Programmer</string>
 										<string>Color3</string>
 										<key>value</key>
 										<array>
-											<real>0.19607844948768616</real>
-											<real>0.19607844948768616</real>
-											<real>0.89019614458084106</real>
+											<real>0.0</real>
+											<real>0.0</real>
+											<real>0.0</real>
 											<real>1</real>
 										</array>
 									</dict>
@@ -3743,7 +3743,7 @@ Programmer</string>
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>2</real>
+											<real>1</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -3755,7 +3755,7 @@ Programmer</string>
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>-2</real>
+											<real>0.0</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -5986,8 +5986,6 @@ Programmer</string>
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
