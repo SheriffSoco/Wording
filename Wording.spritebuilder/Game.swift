@@ -38,6 +38,7 @@ class Game: CCScene {
     var orangeZeroNode : CCNode!
     var orangeOneNode : CCNode!
     var particleNode : CCNode!
+    var statsPage : CCNode!
     var buttonBackground : CCNodeColor!
     var nodeArray : [CCNode] = []
     var whiteZeroButton : CCButton!
@@ -519,11 +520,15 @@ class Game: CCScene {
     }
     
     func trophy() {
-        
+        statsPage.position = ccp(0,0)
     }
     
     func menu() {
         let mainScene: CCScene = CCBReader.loadAsScene("MainScene")
         CCDirector.sharedDirector().replaceScene(mainScene);
+    }
+    
+    func top() {
+        statsPage.position = ccp(0,-1000)
     }
 }

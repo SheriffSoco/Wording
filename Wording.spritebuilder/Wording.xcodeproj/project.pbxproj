@@ -19,6 +19,7 @@
 		16509F3C1B065F6B001D6D3B /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16509F3A1B065F6B001D6D3B /* Letter.swift */; };
 		165A8CF31B190C170050388E /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A8CF21B190C170050388E /* MenuButton.swift */; };
 		1661CF011B7AF7CC000F4B89 /* WordGrabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1661CF001B7AF7CC000F4B89 /* WordGrabber.swift */; };
+		167B79AF1C3ED0A400592BA7 /* scores.txt in Resources */ = {isa = PBXBuildFile; fileRef = 167B79AE1C3ED0A300592BA7 /* scores.txt */; };
 		169C4C921BAB1EAB0035590D /* LargeDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169C4C911BAB1EAB0035590D /* LargeDivider.swift */; };
 		16B242C11B62005D0008D062 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16B242BE1B62005D0008D062 /* Correct.wav */; };
 		16B242C21B62005D0008D062 /* Fail.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16B242BF1B62005D0008D062 /* Fail.wav */; };
@@ -174,6 +175,7 @@
 		16509F3A1B065F6B001D6D3B /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		165A8CF21B190C170050388E /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		1661CF001B7AF7CC000F4B89 /* WordGrabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordGrabber.swift; sourceTree = "<group>"; };
+		167B79AE1C3ED0A300592BA7 /* scores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = scores.txt; path = Source/Resources/scores.txt; sourceTree = "<group>"; };
 		169C4C911BAB1EAB0035590D /* LargeDivider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeDivider.swift; sourceTree = "<group>"; };
 		16B242BE1B62005D0008D062 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Correct.wav; path = ../Sounds/Correct.wav; sourceTree = "<group>"; };
 		16B242BF1B62005D0008D062 /* Fail.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Fail.wav; path = ../Sounds/Fail.wav; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 		B77F1CCF17B978D8009739AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				167B79AE1C3ED0A300592BA7 /* scores.txt */,
 				16B672861BEBC3FE00EE66AB /* iwords.txt */,
 				16B672871BEBC3FE00EE66AB /* mixedwords.txt */,
 				16B672881BEBC3FE00EE66AB /* owords.txt */,
@@ -781,6 +784,7 @@
 				1611D6201C21125E00D8AB7F /* Help.wav in Resources */,
 				1611D6261C2138B500D8AB7F /* Continue.wav in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
+				167B79AF1C3ED0A400592BA7 /* scores.txt in Resources */,
 				16B672891BEBC3FE00EE66AB /* iwords.txt in Resources */,
 				16B6728D1BEBC3FE00EE66AB /* owords.txt in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
