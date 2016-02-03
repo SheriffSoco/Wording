@@ -133,10 +133,10 @@ class MainScene: CCNode {
         letterTwo.opacity = 0
         letterThree.opacity = 0
         letterFour.opacity = 0
-        redZeroButton.position = ccp(-1000,0)
-        redOneButton.position = ccp(-1000,0)
-        blueZeroButton.position = ccp(-1000,0)
-        blueOneButton.position = ccp(-1000,0)
+        redZeroNode.position = ccp(-378,388)
+        redOneNode.position = ccp(-230,388)
+        blueZeroNode.position = ccp(-378,220.5)
+        blueOneNode.position = ccp(-230,220.5)
         scoreBar.position = ccp(-420, scoreBar.position.y)
         playButton.enabled = false
         helpButton.enabled = false

@@ -54,6 +54,7 @@ class Game: CCScene {
     var retryButton : CCButton!
     var trophyButton : CCButton!
     var menuButton : CCButton!
+    var toTopButton : CCButton!
     var redZeroImage : GameButton!
     var redOneImage : GameButton!
     var blueZeroImage : GameButton!
@@ -83,11 +84,15 @@ class Game: CCScene {
     var speedCounter : CGFloat = 0
     var scoreCounter : CGFloat = 0
     var timer : CGFloat = 0
+    var increment : CGFloat = 0
+    var slowLimit : CGFloat = 0 //The slowest time required to complete the first level (2.5 or 1.5 seconds)
     var newButtonCounter : Int = 10
     var buttonPatternCounter : Int = 0
     var stepCounter : Int = 0
     var startCounter : Int = 0
     var loadCounter : Int = 0
+    var moveStats : Int = 0
+    var statsCounter : Int = 0
     var moveButtons : Bool = false
     var allZeros : Bool = false
     var allOnes : Bool = false
@@ -124,6 +129,7 @@ class Game: CCScene {
         letterThree.opacity = 0
         letterFour.opacity = 0
         score.string = "0"
+        toTopButton.enabled = false
         self.userInteractionEnabled = true
     }
     
@@ -183,11 +189,43 @@ class Game: CCScene {
             }
         }
         else if isGameOver != true {
-            timer = 2+(0.1*speedCounter)
+            timer = CGFloat(speedCounter)/60
             scoreBar.position = ccp(scoreBar.position.x-timer,scoreBar.position.y)
             if scoreBar.position.x <= -320 {
                 isGameOver = true
                 gameOver()
+            }
+        }
+        
+        if moveStats != 0 {
+            switch(moveStats) {
+            case 1:
+                if statsCounter == 25 {
+                    statsCounter = 0
+                    moveStats = 0
+                    toTopButton.enabled = true
+                }
+                else {
+                    statsPage.position = ccp(0,(CGFloat(statsCounter) * CGFloat(statsCounter)) - 576)
+                    statsCounter++
+                }
+                break;
+            case 2:
+                if statsCounter == 25 {
+                    statsCounter = 0
+                    moveStats = 0
+                    retryButton.enabled = true
+                    trophyButton.enabled = true
+                    menuButton.enabled = true
+                }
+                else {
+                    statsPage.position = ccp(0,-1 * (CGFloat(statsCounter) * CGFloat(statsCounter)))
+                    statsCounter++
+                }
+                break;
+            default:
+                println("Something went wrong :(")
+                break;
             }
         }
     }
@@ -223,6 +261,7 @@ class Game: CCScene {
             zeroColors.append(numberArray[Int(secondNode)])
             oneColors.append(numberArray[Int(firstNode)+4])
             oneColors.append(numberArray[Int(secondNode)+4])
+            slowLimit = 2.5
         }
         else {
             var firstButton : UInt32 = arc4random_uniform(8)
@@ -266,6 +305,7 @@ class Game: CCScene {
             else {
                 oneColors.append(numberArray[Int(fourthButton)])
             }
+            slowLimit = 1.5
         }
         if zeroColors.count == 0 {
             allOnes = true
@@ -350,6 +390,7 @@ class Game: CCScene {
                 }
             }
         }
+        speedCounter = 320/(slowLimit - increment*levelCounter)
     }
     
     func checkLetter (colorNumber: Int) {
@@ -384,11 +425,14 @@ class Game: CCScene {
         if buttonCharacters.count == 0 {
             allCharacters.removeAll()
             levelCounter++
-            speedCounter++
             getScore()
             if Int(levelCounter)%Int(newButtonCounter) == 0 {
                 startCounter = 1
-                speedCounter = 0
+                newButtonCounter--
+                if newButtonCounter < 4 {
+                    newButtonCounter = 5
+                }
+                increment = 1 / CGFloat(newButtonCounter - 1)
             }
             else {
                 loadNewWord()
@@ -398,7 +442,7 @@ class Game: CCScene {
     
     func getScore () {
         var levelScore : CGFloat
-        levelScore = ((320+scoreBar.position.x)/320)*100.0
+        levelScore = ((320+scoreBar.position.x)/320) * 100.0 * CGFloat(buttonPatternCounter)
         scoreCounter = scoreCounter + levelScore
         score.string = "\(Int(scoreCounter))"
     }
@@ -520,7 +564,10 @@ class Game: CCScene {
     }
     
     func trophy() {
-        statsPage.position = ccp(0,0)
+        moveStats = 1
+        trophyButton.enabled = false
+        retryButton.enabled = false
+        menuButton.enabled = false
     }
     
     func menu() {
@@ -529,6 +576,7 @@ class Game: CCScene {
     }
     
     func top() {
-        statsPage.position = ccp(0,-1000)
+        moveStats = 2
+        toTopButton.enabled = false
     }
 }
